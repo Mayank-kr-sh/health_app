@@ -46,10 +46,6 @@ class _ScheduleDemoState extends State<ScheduleDemo> {
                   filled: true,
                   fillColor: Colors.grey[200],
                   prefixIcon: const Icon(Icons.person, color: kSecondaryColor),
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.clear, color: kSecondaryColor),
-                  ),
                 ),
               ),
             ),
