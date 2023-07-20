@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../Constant/Constant.dart';
 import '../Screens/Contact.dart';
-import '../Screens/Doctor.dart';
+// import '../Screens/Doctor.dart';
 import '../Screens/HomeScreen.dart';
+import '../Screens/Product/product_screen.dart';
 import '../Screens/Profile.dart';
 
 const Color kInactiveIconColor = Colors.grey;

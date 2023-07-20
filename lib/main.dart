@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Widgets/bottom_nav.dart';
 
 import 'Frontend/Constant/Constant.dart';
-import 'Frontend/Screens/Contact.dart';
-import 'Frontend/Screens/Doctor.dart';
-import 'Frontend/Screens/HomeScreen.dart';
-import 'Frontend/Screens/Profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,15 +15,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _showDialog = true;
-
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 20), () {
-      setState(() {
-        _showDialog = false;
-      });
+      setState(() {});
     });
   }
 
