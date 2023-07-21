@@ -4,8 +4,8 @@ import 'package:health_app/Frontend/Screens/Product/schedule_demo.dart';
 
 import '../../Widgets/Banner.dart';
 
-class FeatureScreen extends StatelessWidget {
-  const FeatureScreen({super.key});
+class ExploreScreen extends StatelessWidget {
+  const ExploreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

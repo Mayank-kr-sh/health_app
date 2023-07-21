@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../Constant/Constant.dart';
-import 'features_screen.dart';
+import 'explore_screen.dart';
+import 'key_features.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});
@@ -14,127 +16,212 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
-    final orientation = MediaQuery.of(context).orientation;
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: kPrimaryColor,
-            elevation: 2,
-            title: const Text("Tailored products that fit your needs",
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black))),
-        body: CarouselSlider(
-          options: CarouselOptions(
-              height: orientation == Orientation.portrait
-                  ? screenHeight * 0.8
-                  : screenHeight * 0.6,
-              aspectRatio: 16 / 9,
-              enlargeCenterPage: true,
-              enableInfiniteScroll: true,
-              autoPlay: true,
-              viewportFraction: 0.5),
-          items: [
-            buildCarouselItem("Hospital", orientation, screenWidth,
-                screenHeight, 'assets/images/hospital.png', () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const FeatureScreen()));
-            }),
-            buildCarouselItem("Private Clinic", orientation, screenWidth,
-                screenHeight, 'assets/images/clinic.png', () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const FeatureScreen()));
-            }),
-            buildCarouselItem("Pharmacy", orientation, screenWidth,
-                screenHeight, 'assets/images/pharmacy.png', () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const FeatureScreen()));
-            }),
-            buildCarouselItem("Lab", orientation, screenWidth, screenHeight,
-                'assets/images/lab.png', () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const FeatureScreen()));
-            }),
-          ],
-        ));
+      appBar: AppBar(
+        backgroundColor: kPrimaryColor,
+        elevation: 2,
+        title: const Text(
+          "Tailored products that fit your needs",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: CarouselSlider(
+              options: CarouselOptions(
+                height: MediaQuery.of(context).size.height * 0.4,
+                aspectRatio: 16 / 9,
+                enlargeCenterPage: true,
+                enableInfiniteScroll: true,
+                autoPlay: true,
+                viewportFraction: 0.5,
+              ),
+              items: [
+                buildCarouselItem(
+                  "Hospital",
+                  'assets/images/hospital.png',
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ExploreScreen(),
+                      ),
+                    );
+                  },
+                ),
+                buildCarouselItem(
+                  "Private Clinic",
+                  'assets/images/clinic.png',
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ExploreScreen(),
+                      ),
+                    );
+                  },
+                ),
+                buildCarouselItem(
+                  "Pharmacy",
+                  'assets/images/pharmacy.png',
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ExploreScreen(),
+                      ),
+                    );
+                  },
+                ),
+                buildCarouselItem(
+                  "Lab",
+                  'assets/images/lab.png',
+                  () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ExploreScreen(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 0), // Set top padding to zero
+            color: kPrimaryColor,
+            height: MediaQuery.of(context).size.height * 0.45,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      alignment: Alignment.topCenter,
+                      child: const Text(
+                        "Key Features",
+                        style: TextStyle(
+                            fontSize: 22, fontWeight: FontWeight.w700),
+                      )),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const KeyFeatures(
+                  text: "Appointments Scheduling",
+                  icon: "./assets/icons/calender.svg",
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const KeyFeatures(
+                  text: "Visual Case Sheets",
+                  icon: "./assets/icons/calender.svg",
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const KeyFeatures(
+                  text: "Patient Registration",
+                  icon: "./assets/icons/calender.svg",
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const KeyFeatures(
+                  text: "Unique Patient ID's",
+                  icon: "./assets/icons/calender.svg",
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget buildCarouselItem(
     String title,
-    Orientation orientation,
-    double screenWidth,
-    double screenHeight,
     String assetPath,
     VoidCallback onPressed,
   ) {
-    return Column(
-      children: [
-        const SizedBox(
-          height: 20,
-        ),
-        Text(
-          title,
-          style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey.shade700),
-        ),
-        Container(
-          width: orientation == Orientation.portrait
-              ? screenWidth * 0.45
-              : screenWidth * 0.48,
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 1),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white, width: 2),
-                borderRadius: BorderRadius.circular(6),
-              ),
-              padding: const EdgeInsets.all(7),
-              child: Image.asset(
-                assetPath,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final orientation = MediaQuery.of(context).orientation;
+        final screenWidth = constraints.maxWidth;
+        final screenHeight = constraints.maxHeight;
+
+        return Column(
+          children: [
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey.shade700,
               ),
             ),
-          ),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        ElevatedButton(
-          onPressed: onPressed,
-          style: ElevatedButton.styleFrom(
-            elevation: 4,
-            backgroundColor: kPrimaryLightColor,
-            foregroundColor: Colors.black,
-            padding:
-                const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
-            shape: const RoundedRectangleBorder(
-                // borderRadius: BorderRadius.circular(8.0),
+            Container(
+              width: orientation == Orientation.portrait
+                  ? screenWidth * 0.70
+                  : screenWidth * 0.48,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white, width: 1),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(3.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white, width: 2),
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  padding: const EdgeInsets.all(7),
+                  child: Image.asset(
+                    assetPath,
+                  ),
                 ),
-          ),
-          child: const Text(
-            "Explore",
-            style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.w700,
-                color: Colors.white),
-          ),
-        )
-      ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+              onPressed: onPressed,
+              style: ElevatedButton.styleFrom(
+                elevation: 4,
+                backgroundColor: kPrimaryLightColor,
+                foregroundColor: Colors.black,
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12.0,
+                  horizontal: 24.0,
+                ),
+                shape: const RoundedRectangleBorder(),
+              ),
+              child: const Text(
+                "Explore",
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
