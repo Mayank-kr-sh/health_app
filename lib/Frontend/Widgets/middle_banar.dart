@@ -19,7 +19,7 @@ class MiddleBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 210,
       width: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -32,53 +32,51 @@ class MiddleBanner extends StatelessWidget {
       child: Container(
         color: const Color(0xff188ba0).withOpacity(0.8),
         padding: const EdgeInsets.all(8),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  heading,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                heading,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 150,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(image1),
+                    ),
+                  ),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: 150,
-                    width: 120,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(image1),
-                      ),
+                Container(
+                  height: 150,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(image2),
                     ),
                   ),
-                  Container(
-                    height: 150,
-                    width: 140,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(image2),
-                      ),
+                ),
+                Container(
+                  height: 150,
+                  width: 130,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(image3),
                     ),
                   ),
-                  Container(
-                    height: 150,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(image3),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
