@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Constant/Constant.dart';
-import 'package:health_app/Frontend/Screens/Product/request_demo.dart';
 import 'package:health_app/Frontend/Screens/Product/schedule_demo.dart';
-import 'package:health_app/Frontend/Widgets/custom_button.dart';
+
+import '../../Widgets/Banner.dart';
 
 class FeatureScreen extends StatelessWidget {
   const FeatureScreen({super.key});
@@ -20,6 +19,7 @@ class FeatureScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
+            centerTitle: true,
             backgroundColor: kPrimaryColor,
             elevation: 0,
             leading: IconButton(
@@ -31,47 +31,18 @@ class FeatureScreen extends StatelessWidget {
               ),
               color: Colors.black,
             )),
-        body: SingleChildScrollView(
+        body: const SingleChildScrollView(
           child: Column(
             children: [
-              // const Center(
-              //   child: Text(
-              //     "Halemind for Hospital",
-              //     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              //   ),
-              // ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
-              // Center(
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.topRight,
-                child: const Text(
-                  "Halemind's hospital management system is a customisable and integrated data management solution designed for Hospitals, Medical colleges and Clinics. Halemind's powerful cloud-based technology combined with expert customer support allows you to increase operational efficiency, optimize financial performance and deliver outstanding patient experiences.",
-                  style: TextStyle(
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black,
-                  ),
-                  // ),
-                ),
+              DynamicBanner(
+                backimage: 'assets/images/poster3.png',
+                description:
+                    "Halemind is an ingenious, leading edge and connected EMR and HMS that empowers independent practices and hospitals. Halemind's secure, advanced and speciality driven EHR that enables you to run your practice in a simpler and efficient way, so you can focus on what matters the most - Your Patients.",
+                buttonText: 'Request for Free Demo',
+                thumbnailAsset: 'assets/images/product.png',
+                videoUrl: 'https://www.youtube.com/watch?v=tnxGPvZcOWk',
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              CustomButton(
-                  text: 'Request For A Free Demo',
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const DemoScreen()));
-                  }),
-              const SizedBox(
-                height: 30,
-              ),
-              const ScheduleDemo()
+              ScheduleDemo()
             ],
           ),
         ));

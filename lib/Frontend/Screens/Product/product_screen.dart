@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:health_app/Frontend/Widgets/custom_button.dart';
 
 import '../../Constant/Constant.dart';
 import 'features_screen.dart';
