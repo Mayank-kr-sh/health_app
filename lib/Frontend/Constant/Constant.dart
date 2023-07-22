@@ -9,3 +9,16 @@ const kPrimaryGradientColor = LinearGradient(
 );
 const kSecondaryColor = Color.fromARGB(255, 55, 164, 207);
 const kTextColor = Color(0xFF757575);
+
+
+ final List<String> imageList = [
+    'assets/images/poster1.png',
+    'assets/images/poster2.png',
+    'assets/images/poster3.png',
+  ];
+
+  final List<String> descriptions = [
+    'Description 1',
+    'Description 2',
+    'Description 3',
+  ];

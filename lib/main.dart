@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Widgets/bottom_nav.dart';
 
 import 'Frontend/Constant/Constant.dart';
+// import 'Frontend/auth/hospital_login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: kPrimaryColor),
       home: const CustomBottomNavBar(),
+      // home: const Hospital_Login(),
     );
   }
 }
