@@ -10,7 +10,7 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kPrimaryColor,
+        backgroundColor: kPrimaryLightColor,
         appBar: AppBar(
             title: const Text(
               "Halemind for Hospital",
@@ -20,7 +20,7 @@ class ExploreScreen extends StatelessWidget {
                   color: Colors.black),
             ),
             centerTitle: true,
-            backgroundColor: kPrimaryColor,
+            backgroundColor: kPrimaryLightColor,
             elevation: 0,
             leading: IconButton(
               onPressed: () {

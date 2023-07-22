@@ -18,9 +18,10 @@ class MiddleBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: 210,
-      width: double.infinity,
+      width: screenWidth,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -67,7 +68,7 @@ class MiddleBanner extends StatelessWidget {
                 ),
                 Container(
                   height: 150,
-                  width: 130,
+                  width: 100,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(image3),

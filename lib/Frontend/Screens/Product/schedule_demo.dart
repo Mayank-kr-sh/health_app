@@ -28,7 +28,7 @@ class _ScheduleDemoState extends State<ScheduleDemo> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: TextField(
-                cursorColor: kPrimaryColor,
+                cursorColor: kPrimaryLightColor,
                 decoration: InputDecoration(
                   labelText: 'Your Name...',
                   labelStyle: const TextStyle(
@@ -52,7 +52,7 @@ class _ScheduleDemoState extends State<ScheduleDemo> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: TextField(
-                cursorColor: kPrimaryColor,
+                cursorColor: kPrimaryLightColor,
                 decoration: InputDecoration(
                   labelText: 'Your Organization...',
                   labelStyle: const TextStyle(

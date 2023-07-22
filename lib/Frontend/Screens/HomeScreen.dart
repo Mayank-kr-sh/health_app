@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/Widgets/Sliding.dart';
 import 'package:health_app/Frontend/Widgets/Sliding_points.dart';
 import 'package:health_app/Frontend/Widgets/middle_banar.dart';
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         ),
         elevation: 2,
         centerTitle: true,
-        backgroundColor: const Color(0xff5cb85c),
+        backgroundColor: kPrimaryLightColor,
       ),
       body: SingleChildScrollView(
         child: Column(

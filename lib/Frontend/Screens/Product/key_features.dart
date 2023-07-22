@@ -20,7 +20,7 @@ class KeyFeatures extends StatelessWidget {
             child: Center(
               child: SvgPicture.asset(
                 icon,
-                width: 28,
+                width: 33,
               ),
             ),
           ),

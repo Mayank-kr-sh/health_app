@@ -18,7 +18,7 @@ class _ProductScreenState extends State<ProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kPrimaryColor,
+        backgroundColor: kPrimaryLightColor,
         elevation: 2,
         title: const Text(
           "Tailored products that fit your needs",
@@ -95,53 +95,90 @@ class _ProductScreenState extends State<ProductScreen> {
           ),
           Container(
             padding: const EdgeInsets.only(top: 0), // Set top padding to zero
-            color: kPrimaryColor,
+            color: kPrimaryLightColor,
             height: MediaQuery.of(context).size.height * 0.45,
             width: MediaQuery.of(context).size.width,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      alignment: Alignment.topCenter,
-                      child: const Text(
-                        "Key Features",
-                        style: TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.w700),
-                      )),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const KeyFeatures(
-                  text: "Appointments Scheduling",
-                  icon: "./assets/icons/calender.svg",
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const KeyFeatures(
-                  text: "Visual Case Sheets",
-                  icon: "./assets/icons/calender.svg",
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const KeyFeatures(
-                  text: "Patient Registration",
-                  icon: "./assets/icons/calender.svg",
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const KeyFeatures(
-                  text: "Unique Patient ID's",
-                  icon: "./assets/icons/calender.svg",
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                        alignment: Alignment.topCenter,
+                        child: const Text(
+                          "Key Features",
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w700),
+                        )),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const KeyFeatures(
+                    text: "Appointments Scheduling",
+                    icon: "./assets/icons/calender.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const KeyFeatures(
+                    text: "Visual Case Sheets",
+                    icon: "./assets/icons/case.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const KeyFeatures(
+                    text: "Patient Registration",
+                    icon: "./assets/icons/patient_reg.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const KeyFeatures(
+                    text: "Unique Patient ID's",
+                    icon: "./assets/icons/patient_id.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const KeyFeatures(
+                    text: "Out-patient Management",
+                    icon: "./assets/icons/out_patient.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const KeyFeatures(
+                    text: "In-patient Management",
+                    icon: "./assets/icons/in_patient.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const KeyFeatures(
+                    text: "OT Management",
+                    icon: "./assets/icons/ot_patient.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const KeyFeatures(
+                    text: "Ward Management",
+                    icon: "./assets/icons/ward_management.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const KeyFeatures(
+                    text: "Automated Billing",
+                    icon: "./assets/icons/calender.svg",
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -202,7 +239,7 @@ class _ProductScreenState extends State<ProductScreen> {
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
                 elevation: 4,
-                backgroundColor: kPrimaryLightColor,
+                backgroundColor: kPrimaryColor,
                 foregroundColor: Colors.black,
                 padding: const EdgeInsets.symmetric(
                   vertical: 12.0,
