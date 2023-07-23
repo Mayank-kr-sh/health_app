@@ -11,13 +11,19 @@ const kSecondaryColor = Color.fromARGB(255, 55, 164, 207);
 const kTextColor = Color(0xFF757575);
 
 final List<String> imageList = [
-  'assets/images/poster1.png',
-  'assets/images/poster2.png',
-  'assets/images/poster3.png',
+  'assets/images/banner1.png',
+  'assets/images/banner2.png',
+  'assets/images/banner3.jpg',
 ];
 
 final List<String> descriptions = [
-  'Description 1',
-  'Description 2',
-  'Description 3',
+  '• Electronic health records \n• Seamless platform\n• No revenue leakage\n',
+  '• Easy appointment and registrations \n• Faster billing and patient discharges\n',
+  '• Customized consultation templets\n• Healthcare analytics\n• Visual Case Sheet \n',
+];
+
+final List<String> Headings = [
+  'Efficient Operations',
+  'Patient Engagements',
+  'Evdience Based Care',
 ];

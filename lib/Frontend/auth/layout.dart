@@ -1,11 +1,6 @@
-import 'dart:ui';
-
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import '../Constant/Constant.dart';
 import '../Widgets/Text_field.dart';
+import '../Widgets/auth_poster.dart';
 import '../Widgets/custom_button.dart';
 
 class ScreenLayout extends StatefulWidget {
@@ -40,26 +35,76 @@ class ScreenLayout extends StatefulWidget {
 class _ScreenLayoutState extends State<ScreenLayout> {
   final TextEditingController _emailOrPhoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  void _handleLoginButtonPress() {
+    String emailOrPhone = _emailOrPhoneController.text.trim();
+    String password = _passwordController.text.trim();
 
-  int _currentIndex = 0;
-  Timer? _carouselTimer;
-
-  @override
-  void initState() {
-    super.initState();
-    // Start the carousel slider timer
-    Timer.periodic(const Duration(seconds: 5), (timer) {
-      setState(() {
-        _currentIndex = (_currentIndex + 1) % imageList.length;
-      });
-    });
+    if (emailOrPhone.isEmpty || password.isEmpty) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Error'),
+            content: const Text('Please enter your email/phone and password.'),
+            actions: [
+              CustomButton(
+                text: 'OK',
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                backgroundColor: widget.bgColor1,
+              ),
+            ],
+          );
+        },
+      );
+    } else if (!_isValidEmail(emailOrPhone)) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Error'),
+            content: const Text('Please enter a valid email address.'),
+            actions: [
+              CustomButton(
+                text: 'OK',
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                backgroundColor: widget.bgColor1,
+              ),
+            ],
+          );
+        },
+      );
+    } else if (password.length < 6) {
+      // Password too short error
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Error'),
+            content: const Text('Password must be at least 6 characters long.'),
+            actions: [
+              CustomButton(
+                text: 'OK',
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                backgroundColor: widget.bgColor1,
+              )
+            ],
+          );
+        },
+      );
+    } else {
+      // Proceed with the login process
+      // Implement your login logic here
+    }
   }
 
-  @override
-  void dispose() {
-    // Cancel the carousel slider timer when the widget is disposed of
-    _carouselTimer?.cancel();
-    super.dispose();
+  bool _isValidEmail(String email) {
+    return RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(email);
   }
 
   @override
@@ -111,12 +156,12 @@ class _ScreenLayoutState extends State<ScreenLayout> {
               LoginTextField(
                 controller: _emailOrPhoneController,
                 labelText: 'Enter Email or Phone Number',
-                hintText: 'Email or Phone Number',
+                hintText: '',
               ),
               LoginTextField(
                 controller: _passwordController,
                 labelText: 'Enter Password',
-                hintText: 'Password',
+                hintText: '',
                 isPassword: true,
               ),
               Padding(
@@ -125,11 +170,11 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                     width: double.infinity,
                     height: 40,
                     text: 'Log In',
-                    onPressed: () {},
+                    onPressed: _handleLoginButtonPress,
                     backgroundColor: widget.bgColor1,
                   )),
               Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 14),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -138,7 +183,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                       child: const Text(
                         'Register',
                         style: TextStyle(
-                          color: Color(0xff52c1ac),
+                          color: Colors.grey,
                         ),
                       ),
                     ),
@@ -147,7 +192,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                       child: const Text(
                         'Forgot Password?',
                         style: TextStyle(
-                          color: Color(0xff52c1ac),
+                          color: Colors.grey,
                         ),
                       ),
                     ),
@@ -178,34 +223,8 @@ class _ScreenLayoutState extends State<ScreenLayout> {
           backgroundColor: widget.bgColor3,
           //  backgroundColor: const Color(0xffac8a5c),
         ),
-        const SizedBox(height: 20),
-        CarouselSlider(
-          items: imageList
-              .map((item) => Container(
-                    child: Center(
-                      child: Image.asset(item),
-                    ),
-                  ))
-              .toList(),
-          options: CarouselOptions(
-            height: 200,
-            viewportFraction: 0.9,
-            enlargeCenterPage: true,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-          ),
-        ),
-        const SizedBox(height: 10),
-        Text(
-          descriptions[_currentIndex],
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        const SizedBox(height: 30),
+        const loginBanner(),
       ],
     );
   }
