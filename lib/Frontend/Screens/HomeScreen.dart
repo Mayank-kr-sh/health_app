@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/Widgets/Sliding.dart';
 import 'package:health_app/Frontend/Widgets/Sliding_points.dart';
 import 'package:health_app/Frontend/Widgets/middle_banar.dart';
 
 import '../Widgets/Banner.dart';
+import '../Widgets/drawer_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    // final screenWidth = MediaQuery.of(context).size.width;
     // final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
         title: const Text(
           'Home',
           style: TextStyle(color: Colors.black),
@@ -25,17 +28,11 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: kPrimaryLightColor,
       ),
+      drawer: const DrawerSection(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SvgPicture.asset(
-                'assets/images/logo2.svg',
-                width: screenWidth * 0.4,
-              ),
-            ),
             const DynamicBanner(
               backimage: 'assets/images/poster.png',
               description:
