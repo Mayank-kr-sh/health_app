@@ -27,13 +27,14 @@ class CustomButton extends StatelessWidget {
           backgroundColor: backgroundColor,
           padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(14.0),
           ),
         ),
         child: Text(
           text,
           style: const TextStyle(
             fontSize: 16.0,
+            // color: Colors.black,
             fontWeight: FontWeight.w500,
           ),
         ),

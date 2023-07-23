@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/Widgets/custom_button.dart';
 import 'package:health_app/Frontend/auth/hospital_login.dart';
 import 'package:share_plus/share_plus.dart';
@@ -33,6 +34,7 @@ class DrawerSection extends StatelessWidget {
         16.0 * textScaleFactor; // Adjust the base font size as needed
 
     return Drawer(
+      backgroundColor: kPrimaryLightColor,
       child: ListView(
         children: [
           Column(
@@ -48,25 +50,21 @@ class DrawerSection extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8, right: 4),
-                child: CustomButton(
-                  onPressed: () => _navigateToProvidersScreen(context),
-                  text: 'Providers Login',
-                  backgroundColor: const Color(0xff32c2b2),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 3, right: 6),
-                child: CustomButton(
-                  onPressed: () => _navigateToProvidersScreen(context),
-                  text: 'Patient Login',
-                  backgroundColor: const Color(0xff5bc0de),
-                ),
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left: 8, right: 4),
+            child: CustomButton(
+              onPressed: () => _navigateToProvidersScreen(context),
+              text: 'Providers Login',
+              backgroundColor: kPrimaryColor,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 3, right: 6),
+            child: CustomButton(
+              onPressed: () => _navigateToProvidersScreen(context),
+              text: 'Patient Login',
+              backgroundColor: kSecondaryColor,
+            ),
           ),
           const Divider(),
           ListTile(

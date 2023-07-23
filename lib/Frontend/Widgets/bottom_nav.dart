@@ -5,7 +5,7 @@ import '../Constant/Constant.dart';
 import '../Screens/HomeScreen.dart';
 import '../Screens/contact/contact_screen.dart';
 import '../Screens/Product/product_screen.dart';
-import '../Screens/Profile.dart';
+import '../Screens/profile/Profile.dart';
 
 const Color kInactiveIconColor = Colors.grey;
 
@@ -39,11 +39,12 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         children: const [
           HomeScreen(),
           ProductScreen(),
-          AboutScreen(),
+          ProfileScreen(),
           ContactScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
