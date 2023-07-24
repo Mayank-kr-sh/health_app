@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/auth/layout.dart';
 
+import 'forget.dart';
 import 'doctor_login.dart';
 import 'hospital_login.dart';
 
@@ -10,6 +11,18 @@ class Staff_Login extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const Doctor_Login()),
+    );
+  }
+
+  void _navigateToForgetScreen(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return const ForgotPasswordDialog(
+          bgColor1: Color(0xffac8a5c),
+          title: 'FORGOT YOUR PASSWORD - STAFF',
+        );
+      },
     );
   }
 
@@ -47,6 +60,7 @@ class Staff_Login extends StatelessWidget {
             button2: 'Doctor Login',
             bgColor3: const Color(0xff20b2aa),
             onPressed2: () => _navigateToDoctorScreen(context),
+            onPressed3: () => _navigateToForgetScreen(context),
           ),
         ),
       ),

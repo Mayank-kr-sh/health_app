@@ -13,6 +13,7 @@ class ScreenLayout extends StatefulWidget {
   final Color bgColor3;
   final VoidCallback onPressed1;
   final VoidCallback onPressed2;
+  final VoidCallback onPressed3;
 
   const ScreenLayout({
     Key? key,
@@ -25,6 +26,7 @@ class ScreenLayout extends StatefulWidget {
     required this.onPressed1,
     required this.onPressed2,
     required this.button2,
+    required this.onPressed3,
   }) : super(key: key);
 
   @override
@@ -35,6 +37,7 @@ class ScreenLayout extends StatefulWidget {
 class _ScreenLayoutState extends State<ScreenLayout> {
   final TextEditingController _emailOrPhoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
   void _handleLoginButtonPress() {
     String emailOrPhone = _emailOrPhoneController.text.trim();
     String password = _passwordController.text.trim();
@@ -188,7 +191,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: widget.onPressed3,
                       child: const Text(
                         'Forgot Password?',
                         style: TextStyle(
