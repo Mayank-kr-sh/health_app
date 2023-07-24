@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/Frontend/Constant/Constant.dart';
+import 'package:health_app/Frontend/Widgets/custom_button.dart';
 import '../Widgets/video_popup.dart';
 
 class DynamicBanner extends StatelessWidget {
@@ -55,30 +57,12 @@ class DynamicBanner extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Handle button click here
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff52c1ac),
-                        padding: const EdgeInsets.symmetric(vertical: 16),
-                        minimumSize: Size(
-                          orientation == Orientation.portrait
-                              ? screenWidth * 0.6
-                              : screenHeight * 0.8,
-                          0,
-                        ),
-                      ),
-                      child: Text(
-                        buttonText,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                  ),
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: CustomButton(
+                        text: buttonText,
+                        onPressed: () {},
+                        backgroundColor: kPrimaryColor,
+                      )),
                   if (videoUrl != null)
                     GestureDetector(
                       onTap: () {
