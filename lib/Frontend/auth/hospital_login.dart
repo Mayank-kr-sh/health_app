@@ -4,6 +4,7 @@ import 'package:health_app/Frontend/auth/staff_login.dart';
 
 import 'forget.dart';
 import 'doctor_login.dart';
+import 'form_hospital.dart';
 
 class Hospital_Login extends StatelessWidget {
   void _navigateToStaffScreen(BuildContext context) {
@@ -32,6 +33,14 @@ class Hospital_Login extends StatelessWidget {
     );
   }
 
+  void _navigateToRegister(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HospitalRegister()),
+      // Hospital_Login()),
+    );
+  }
+
   const Hospital_Login({super.key});
 
   @override
@@ -55,6 +64,7 @@ class Hospital_Login extends StatelessWidget {
             bgColor3: const Color(0xffac8a5c),
             onPressed2: () => _navigateToStaffScreen(context),
             onPressed3: () => _navigateToForgetScreen(context),
+            onPressed4: () => _navigateToRegister(context),
           ),
         ),
       ),

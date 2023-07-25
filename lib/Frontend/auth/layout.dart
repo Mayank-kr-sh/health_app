@@ -14,6 +14,7 @@ class ScreenLayout extends StatefulWidget {
   final VoidCallback onPressed1;
   final VoidCallback onPressed2;
   final VoidCallback onPressed3;
+  final VoidCallback onPressed4;
 
   const ScreenLayout({
     Key? key,
@@ -27,6 +28,7 @@ class ScreenLayout extends StatefulWidget {
     required this.onPressed2,
     required this.button2,
     required this.onPressed3,
+    required this.onPressed4,
   }) : super(key: key);
 
   @override
@@ -160,12 +162,14 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                 controller: _emailOrPhoneController,
                 labelText: 'Enter Email or Phone Number',
                 hintText: '',
+                bgColor1: widget.bgColor1,
               ),
               LoginTextField(
                 controller: _passwordController,
                 labelText: 'Enter Password',
                 hintText: '',
                 isPassword: true,
+                bgColor1: widget.bgColor1,
               ),
               Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -182,7 +186,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: widget.onPressed4,
                       child: const Text(
                         'Register',
                         style: TextStyle(

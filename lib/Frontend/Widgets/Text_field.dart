@@ -5,22 +5,24 @@ class LoginTextField extends StatelessWidget {
   final String labelText;
   final String hintText;
   final bool isPassword;
+  final Color bgColor1;
 
   const LoginTextField({
     super.key,
     required this.controller,
     required this.labelText,
     required this.hintText,
+    required this.bgColor1,
     this.isPassword = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(10.0),
       child: TextField(
         controller: controller,
-        cursorColor: Colors.blue,
+        cursorColor: bgColor1,
         onChanged: (value) {
           //search(value);
         },
@@ -37,9 +39,9 @@ class LoginTextField extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
-          focusedBorder: const OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.blue,
+              color: bgColor1,
             ),
           ),
           filled: true,
@@ -53,9 +55,13 @@ class LoginTextField extends StatelessWidget {
                   onPressed: () {
                     // Toggle password visibility
                   },
-                  icon: const Icon(Icons.remove_red_eye),
+                  icon: Icon(
+                    Icons.remove_red_eye,
+                    color: bgColor1,
+                  ),
                 )
               : null,
+          errorText: null,
         ),
       ),
     );

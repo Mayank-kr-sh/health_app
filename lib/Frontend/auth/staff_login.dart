@@ -61,6 +61,7 @@ class Staff_Login extends StatelessWidget {
             bgColor3: const Color(0xff20b2aa),
             onPressed2: () => _navigateToDoctorScreen(context),
             onPressed3: () => _navigateToForgetScreen(context),
+            onPressed4: () => _navigateToForgetScreen(context),
           ),
         ),
       ),
