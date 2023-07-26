@@ -62,6 +62,7 @@ class Staff_Login extends StatelessWidget {
             onPressed2: () => _navigateToDoctorScreen(context),
             onPressed3: () => _navigateToForgetScreen(context),
             onPressed4: () => _navigateToForgetScreen(context),
+            isRegister: false,
           ),
         ),
       ),

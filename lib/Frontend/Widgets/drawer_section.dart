@@ -6,6 +6,8 @@ import 'package:health_app/Frontend/auth/hospital_login.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../auth/patient_register.dart';
+
 class DrawerSection extends StatelessWidget {
   void _navigateToProvidersScreen(BuildContext context) {
     Navigator.push(
@@ -17,12 +19,11 @@ class DrawerSection extends StatelessWidget {
   void _navigateToPatientScreen(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const Hospital_Login()),
+      MaterialPageRoute(builder: (context) => const PatientRegister()),
     );
   }
 
-  final String appLink =
-      'https://your_app_link'; // app linke which i get from playstore
+  final String appLink = 'https://your_app_link';
   const DrawerSection({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -61,7 +62,7 @@ class DrawerSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 3, right: 6),
             child: CustomButton(
-              onPressed: () => _navigateToProvidersScreen(context),
+              onPressed: () => _navigateToPatientScreen(context),
               text: 'Patient Login',
               backgroundColor: kSecondaryColor,
             ),

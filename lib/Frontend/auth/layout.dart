@@ -10,6 +10,7 @@ class ScreenLayout extends StatefulWidget {
   final String button1;
   final Color bgColor2;
   final String button2;
+  final bool isRegister;
   final Color bgColor3;
   final VoidCallback onPressed1;
   final VoidCallback onPressed2;
@@ -29,6 +30,7 @@ class ScreenLayout extends StatefulWidget {
     required this.button2,
     required this.onPressed3,
     required this.onPressed4,
+    required this.isRegister,
   }) : super(key: key);
 
   @override
@@ -131,7 +133,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
             color: Colors.grey,
           ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 30),
         Container(
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 243, 241, 241),
@@ -172,39 +174,52 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                 bgColor1: widget.bgColor1,
               ),
               Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: CustomButton(
-                    width: double.infinity,
-                    height: 40,
-                    text: 'Log In',
-                    onPressed: _handleLoginButtonPress,
-                    backgroundColor: widget.bgColor1,
-                  )),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 14),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton(
-                      onPressed: widget.onPressed4,
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: widget.onPressed3,
-                      child: const Text(
-                        'Forgot Password?',
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ],
+                padding: const EdgeInsets.all(14.0),
+                child: CustomButton(
+                  width: double.infinity,
+                  height: 40,
+                  text: 'Log In',
+                  onPressed: _handleLoginButtonPress,
+                  backgroundColor: widget.bgColor1,
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
+                child: widget.isRegister
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          TextButton(
+                            onPressed: widget.onPressed4,
+                            child: const Text(
+                              'Register',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: widget.onPressed3,
+                            child: const Text(
+                              'Forgot Password?',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    : Center(
+                        child: TextButton(
+                          onPressed: widget.onPressed3,
+                          child: const Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ),
               ),
             ],
           ),

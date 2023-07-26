@@ -14,6 +14,8 @@ class LoginTextField extends StatelessWidget {
     required this.hintText,
     required this.bgColor1,
     this.isPassword = false,
+    TextInputAction? textInputAction,
+    TextInputType? keyboardType,
   });
 
   @override

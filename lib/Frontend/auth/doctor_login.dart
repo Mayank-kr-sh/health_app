@@ -66,6 +66,7 @@ class Doctor_Login extends StatelessWidget {
             onPressed2: () => _navigateToStaffScreen(context),
             onPressed3: () => _navigateToForgetScreen(context),
             onPressed4: () => _navigateToRegister(context),
+            isRegister: true,
           ),
         ),
       ),
