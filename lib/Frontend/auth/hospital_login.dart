@@ -49,6 +49,13 @@ class Hospital_Login extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 2,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios_sharp),
+          color: Colors.black,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
