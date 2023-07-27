@@ -35,7 +35,7 @@ class ExploreScreen extends StatelessWidget {
           child: Column(
             children: [
               DynamicBanner(
-                backimage: 'assets/images/poster3.png',
+                backimage: 'assets/images/application.png',
                 description:
                     "Halemind is an ingenious, leading edge and connected EMR and HMS that empowers independent practices and hospitals. Halemind's secure, advanced and speciality driven EHR that enables you to run your practice in a simpler and efficient way, so you can focus on what matters the most - Your Patients.",
                 buttonText: 'Request for Free Demo',

@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                   bottomRight: Radius.circular(20),
                 ),
                 child: DynamicBanner(
-                  backimage: 'assets/images/poster.png',
+                  backimage: 'assets/images/application.png',
                   description:
                       "Halemind is an ingenious, leading edge and connected EMR and HMS that empowers independent practices and hospitals. Halemind's secure, advanced and speciality driven EHR that enables you to run your practice in a simpler and efficient way, so you can focus on what matters the most - Your Patients.",
                   buttonText: 'Get Started for Free',
@@ -127,7 +127,7 @@ class HomeScreen extends StatelessWidget {
                   bottomRight: Radius.circular(20),
                 ),
                 child: MiddleBanner(
-                  backimage: 'assets/images/poster.png',
+                  backimage: 'assets/images/appliction.png',
                   heading: 'Simplify and Scale your Practice',
                   image1: 'assets/images/download.png',
                   image2: 'assets/images/computer.png',

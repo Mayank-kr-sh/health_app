@@ -7,12 +7,13 @@ import '../Widgets/custom_button.dart';
 
 // ignore: camel_case_types
 class Patient_Login extends StatefulWidget {
-  Patient_Login({super.key});
+  const Patient_Login({super.key});
 
   @override
   State<Patient_Login> createState() => _Patient_LoginState();
 }
 
+// ignore: camel_case_types
 class _Patient_LoginState extends State<Patient_Login> {
   final TextEditingController _emailOrPhoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -34,7 +35,7 @@ class _Patient_LoginState extends State<Patient_Login> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                backgroundColor: Color(0xfff0ca4d),
+                backgroundColor: const Color(0xfff0ca4d),
               ),
             ],
           );
@@ -53,7 +54,7 @@ class _Patient_LoginState extends State<Patient_Login> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                backgroundColor: Color(0xfff0ca4d),
+                backgroundColor: const Color(0xfff0ca4d),
               ),
             ],
           );
@@ -73,7 +74,7 @@ class _Patient_LoginState extends State<Patient_Login> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                backgroundColor: Color(0xfff0ca4d),
+                backgroundColor: const Color(0xfff0ca4d),
               )
             ],
           );
