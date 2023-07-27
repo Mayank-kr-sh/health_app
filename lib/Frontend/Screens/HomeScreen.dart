@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Constant/Constant.dart';
-import 'package:health_app/Frontend/Widgets/Sliding.dart';
 import 'package:health_app/Frontend/Widgets/Sliding_points.dart';
 import 'package:health_app/Frontend/Widgets/middle_banar.dart';
 
@@ -22,8 +21,9 @@ class HomeScreen extends StatelessWidget {
           color: Colors.black,
         ),
         title: const Text(
-          'Home',
-          style: TextStyle(color: Colors.black),
+          "Royal Hospital",
+          style: TextStyle(
+              fontSize: 22, fontWeight: FontWeight.w600, color: Colors.black87),
         ),
         elevation: 0,
         centerTitle: true,

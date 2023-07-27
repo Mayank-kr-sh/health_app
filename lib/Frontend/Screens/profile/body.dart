@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/Frontend/Screens/Case%20Sheet/ipd_case_sheet.dart';
 import '../../Constant/Constant.dart';
 import 'profile_menu.dart';
 
@@ -20,13 +21,14 @@ class Body extends StatelessWidget {
                     style:
                         TextStyle(fontSize: 12, fontWeight: FontWeight.w700))),
             ProfileMenu(
-                text: "Hospital Management Software",
+                text: "IPD Case Sheet",
                 icon: "assets/icons/hospital.svg",
                 press: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => const MedicalTeam()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const IPDCaseSheet()),
+                  );
                 }),
             ProfileMenu(
                 text: "Clinic Management Software",

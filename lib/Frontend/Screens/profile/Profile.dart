@@ -53,8 +53,7 @@ class ProfileScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ClipRRect(
                 borderRadius: const BorderRadius.only(
-                  topLeft:
-                      Radius.circular(20), // Adjust the radius value as needed
+                  topLeft: Radius.circular(20),
                   topRight:
                       Radius.circular(20), // Adjust the radius value as needed
                   bottomLeft:
