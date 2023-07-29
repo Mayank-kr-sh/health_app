@@ -42,18 +42,18 @@ class _ProductScreenState extends State<ProductScreen> {
                 viewportFraction: 0.5,
               ),
               items: [
-                buildCarouselItem(
-                  "Hospital",
-                  'assets/images/hospital.png',
-                  () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ExploreScreen(),
-                      ),
-                    );
-                  },
-                ),
+                // buildCarouselItem(
+                //   "Hospital",
+                //   'assets/images/hospital.png',
+                //   () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => const ExploreScreen(),
+                //       ),
+                //     );
+                //   },
+                // ),
                 buildCarouselItem(
                   "Private Clinic",
                   'assets/images/clinic.png',

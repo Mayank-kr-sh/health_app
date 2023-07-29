@@ -272,7 +272,7 @@ class _IPDCaseSheetState extends State<IPDCaseSheet> {
                             child: SvgPicture.asset(
                               "./assets/icons/diagnosis.svg",
                               width: 25,
-                              color: kSecondaryColor,
+                              // color: kPrimbggaryLightColor,
                             ),
                           ),
                         ),
@@ -334,7 +334,7 @@ class _IPDCaseSheetState extends State<IPDCaseSheet> {
                       ),
                     ),
                     child: const Text(
-                      "Submit",
+                      "Schedule A Demo",
                       style: TextStyle(
                           fontSize: 16.0, fontWeight: FontWeight.w700),
                     ),

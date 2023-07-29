@@ -11,7 +11,7 @@ class DemoScreen extends StatelessWidget {
           elevation: 0,
           backgroundColor: kSecondaryColor,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },

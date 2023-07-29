@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/auth/forget.dart';
 import 'package:health_app/Frontend/auth/patient_register.dart';
 
@@ -31,12 +32,11 @@ class _Patient_LoginState extends State<Patient_Login> {
             content: const Text('Please enter your email/phone and password.'),
             actions: [
               CustomButton(
-                text: 'OK',
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                backgroundColor: const Color(0xfff0ca4d),
-              ),
+                  text: 'OK',
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  backgroundColor: kPrimaryColor),
             ],
           );
         },
@@ -50,12 +50,11 @@ class _Patient_LoginState extends State<Patient_Login> {
             content: const Text('Please enter a valid email address.'),
             actions: [
               CustomButton(
-                text: 'OK',
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                backgroundColor: const Color(0xfff0ca4d),
-              ),
+                  text: 'OK',
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  backgroundColor: kPrimaryColor),
             ],
           );
         },
@@ -70,12 +69,11 @@ class _Patient_LoginState extends State<Patient_Login> {
             content: const Text('Password must be at least 6 characters long.'),
             actions: [
               CustomButton(
-                text: 'OK',
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                backgroundColor: const Color(0xfff0ca4d),
-              )
+                  text: 'OK',
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  backgroundColor: kPrimaryColor)
             ],
           );
         },
@@ -109,23 +107,10 @@ class _Patient_LoginState extends State<Patient_Login> {
     );
   }
 
-  Widget _buildPointRow(IconData icon, String text) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 38, vertical: 8.0),
-      child: Row(
-        children: [
-          Icon(icon, size: 25, color: const Color(0xff188ba0)),
-          const SizedBox(width: 10),
-          Text(text,
-              style: const TextStyle(fontSize: 16, color: Colors.black45)),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kPrimaryLightColor,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
@@ -139,7 +124,7 @@ class _Patient_LoginState extends State<Patient_Login> {
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
-        backgroundColor: const Color(0xfff0ca4d),
+        backgroundColor: kPrimaryLightColor,
         elevation: 0,
       ),
       body: Padding(
@@ -148,116 +133,115 @@ class _Patient_LoginState extends State<Patient_Login> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 20),
+              // const SizedBox(height: 20),
               const Text(
                 'Access your health records securely',
-                style: TextStyle(color: Colors.grey, fontSize: 18),
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
               ),
               const SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 4,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Welcome to Royal Hospital Patient Portal',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black45),
-                    ),
-                    const SizedBox(height: 10),
-                    _buildPointRow(Icons.schedule, 'Schedule appointments'),
-                    _buildPointRow(
-                        Icons.receipt, 'Receive prescriptions and alerts'),
-                    _buildPointRow(Icons.history, 'Transparent bill history'),
-                    _buildPointRow(
-                        Icons.settings, 'Manage your health and much more'),
-                    _buildPointRow(
-                        Icons.family_restroom, 'Track your family\'s health'),
-                    _buildPointRow(
-                        Icons.notifications, 'Get reminders and reports'),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 4,
-                      offset: const Offset(0, 4), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 10),
-                      LoginTextField(
-                        controller: _emailOrPhoneController,
-                        labelText: 'Enter Email or Phone Number',
-                        hintText: '',
-                        bgColor1: const Color(0xfff0ca4d),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
                       ),
-                      LoginTextField(
-                        controller: _passwordController,
-                        labelText: 'Enter Password',
-                        hintText: '',
-                        isPassword: true,
-                        bgColor1: const Color(0xfff0ca4d),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(14.0),
-                        child: CustomButton(
-                          width: double.infinity,
-                          height: 40,
-                          text: 'Log In',
-                          onPressed: _handleLoginButtonPress,
-                          backgroundColor: const Color(0xfff0ca4d),
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          TextButton(
-                            onPressed: () => _navigateToRegister(context),
-                            child: const Text(
-                              'Register',
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () => _navigateToForgetScreen(context),
-                            child: const Text(
-                              'Forgot Password?',
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
                     ],
+                  ),
+                  padding: const EdgeInsets.all(16.0),
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Welcome to Royal Hospital Patient Portal',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black87),
+                      ),
+                      SizedBox(height: 10),
+                      Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: ServiceList(),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 10),
+                        LoginTextField(
+                            controller: _emailOrPhoneController,
+                            labelText: 'Enter Email or Phone Number',
+                            hintText: '',
+                            bgColor1: kPrimaryColor),
+                        LoginTextField(
+                            controller: _passwordController,
+                            labelText: 'Enter Password',
+                            hintText: '',
+                            isPassword: true,
+                            bgColor1: kPrimaryColor),
+                        Padding(
+                          padding: const EdgeInsets.all(14.0),
+                          child: CustomButton(
+                              width: double.infinity,
+                              height: 40,
+                              text: 'Log In',
+                              onPressed: _handleLoginButtonPress,
+                              backgroundColor: kPrimaryColor),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                              onPressed: () => _navigateToRegister(context),
+                              child: const Text(
+                                'Register',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () => _navigateToForgetScreen(context),
+                              child: const Text(
+                                'Forgot Password?',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -265,6 +249,110 @@ class _Patient_LoginState extends State<Patient_Login> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ServiceList extends StatelessWidget {
+  const ServiceList({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        Row(
+          children: [
+            Icon(
+              Icons.schedule,
+              color: kPrimaryColor,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Schedule appointments')
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: [
+            Icon(
+              Icons.receipt,
+              color: kPrimaryColor,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Receive prescriptions and alerts')
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: [
+            Icon(
+              Icons.history,
+              color: kPrimaryColor,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Transparent bill history')
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: [
+            Icon(
+              Icons.settings,
+              color: kPrimaryColor,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Manage your health and much more')
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: [
+            Icon(
+              Icons.family_restroom,
+              color: kPrimaryColor,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Track your family\'s health')
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: [
+            Icon(
+              Icons.notifications,
+              color: kPrimaryColor,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text('Get reminders and report')
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+      ],
     );
   }
 }
