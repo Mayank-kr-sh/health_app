@@ -39,7 +39,7 @@ class DynamicBanner extends StatelessWidget {
       child: OrientationBuilder(
         builder: (context, orientation) {
           return Container(
-            color: const Color(0xff188ba0).withOpacity(0.8),
+            color: Color(0xff38b6ff).withOpacity(0.8),
             padding: const EdgeInsets.all(8),
             child: SingleChildScrollView(
               child: Column(
@@ -59,10 +59,10 @@ class DynamicBanner extends StatelessWidget {
                   Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: CustomButton(
-                        text: buttonText,
-                        onPressed: () {},
-                        backgroundColor: kPrimaryColor,
-                      )),
+                          text: buttonText,
+                          onPressed: () {},
+                          backgroundColor: kSecondaryColor,
+                          textColor: Colors.white)),
                   if (videoUrl != null)
                     GestureDetector(
                       onTap: () {
@@ -85,14 +85,14 @@ class DynamicBanner extends StatelessWidget {
                             : screenWidth * 0.48,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.white, width: 2),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(3.0),
                           child: Container(
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.white, width: 2),
-                              borderRadius: BorderRadius.circular(6),
+                              borderRadius: BorderRadius.circular(18),
                             ),
                             padding: const EdgeInsets.all(7),
                             child: Image.asset(

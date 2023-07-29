@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/Frontend/Constant/Constant.dart';
 import '../Widgets/Text_field.dart';
 import '../Widgets/auth_poster.dart';
 import '../Widgets/custom_button.dart';
@@ -112,131 +113,162 @@ class _ScreenLayoutState extends State<ScreenLayout> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const SizedBox(height: 30),
-        Container(
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 243, 241, 241),
-            borderRadius: BorderRadius.circular(8),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 4,
-                offset: const Offset(0, 3), // changes position of shadow
-              ),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: widget.bgColor1,
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 4,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 30),
+          Container(
+            decoration: BoxDecoration(
+              color: kPrimaryColor,
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 4,
+                  offset: const Offset(0, 3), // changes position of shadow
                 ),
-                height: 50,
-                child: Center(
-                    child: Text(
-                  widget.title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 18,
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: widget.bgColor1,
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                   ),
-                )),
-              ),
-              const SizedBox(height: 20),
-              LoginTextField(
-                controller: _emailOrPhoneController,
-                labelText: 'Enter Email or Phone Number',
-                hintText: '',
-                bgColor1: widget.bgColor1,
-              ),
-              LoginTextField(
-                controller: _passwordController,
-                labelText: 'Enter Password',
-                hintText: '',
-                isPassword: true,
-                bgColor1: widget.bgColor1,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(14.0),
-                child: CustomButton(
-                  width: double.infinity,
-                  height: 40,
-                  text: 'Log In',
-                  onPressed: _handleLoginButtonPress,
-                  backgroundColor: widget.bgColor1,
+                  height: 50,
+                  child: Center(
+                      child: Text(
+                    widget.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 18,
+                    ),
+                  )),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 10),
-                child: widget.isRegister
-                    ? Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          TextButton(
-                            onPressed: widget.onPressed4,
-                            child: const Text(
-                              'Register',
-                              style: TextStyle(
-                                color: Colors.grey,
+                const SizedBox(height: 20),
+                LoginTextField(
+                  controller: _emailOrPhoneController,
+                  labelText: 'Enter Email or Phone Number',
+                  hintText: '',
+                  bgColor1: widget.bgColor1,
+                ),
+                LoginTextField(
+                  controller: _passwordController,
+                  labelText: 'Enter Password',
+                  hintText: '',
+                  isPassword: true,
+                  bgColor1: widget.bgColor1,
+                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(14.0),
+                //   child: CustomButton(
+                //     width: double.infinity,
+                //     height: 40,
+                //     text: 'Log In',
+                //     onPressed: _handleLoginButtonPress,
+                //     backgroundColor: widget.bgColor1,
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: 10,
+                // ),
+                Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: CustomButton(
+                    text: "Log In",
+                    width: double.infinity,
+                    height: 55,
+                    onPressed: () {},
+                    backgroundColor: kSecondaryColor,
+                    textColor: Colors.white,
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 16, right: 16, bottom: 10),
+                  child: widget.isRegister
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                              onPressed: widget.onPressed4,
+                              child: const Text(
+                                'Register',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                          TextButton(
+                            TextButton(
+                              onPressed: widget.onPressed3,
+                              child: const Text(
+                                'Forgot Password?',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      : Center(
+                          child: TextButton(
                             onPressed: widget.onPressed3,
                             child: const Text(
                               'Forgot Password?',
                               style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.white,
                               ),
                             ),
                           ),
-                        ],
-                      )
-                    : Center(
-                        child: TextButton(
-                          onPressed: widget.onPressed3,
-                          child: const Text(
-                            'Forgot Password?',
-                            style: TextStyle(
-                              color: Colors.grey,
-                            ),
-                          ),
                         ),
-                      ),
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
-        ),
-        const SizedBox(height: 20),
-        const Divider(),
-        const SizedBox(height: 10),
-        CustomButton(
-          width: double.infinity,
-          height: 40,
-          text: widget.button2,
-          onPressed: widget.onPressed2,
-          backgroundColor: widget.bgColor3,
-          //  backgroundColor: const Color(0xffac8a5c),
-        ),
-        const SizedBox(height: 30),
-        const loginBanner(),
-      ],
+          const SizedBox(height: 20),
+          Container(
+            color: Colors.white,
+            child: Divider(
+              color: kPrimaryColor,
+              height: 2,
+              thickness: 3,
+              indent: screenWidth,
+              endIndent: 10,
+            ),
+          ),
+          const SizedBox(height: 10),
+          CustomButton(
+            width: double.infinity,
+            height: 55,
+            text: widget.button2,
+            onPressed: widget.onPressed2,
+            backgroundColor: widget.bgColor3,
+            textColor: Colors.white,
+            //  backgroundColor: const Color(0xffac8a5c),
+          ),
+          const SizedBox(height: 30),
+          const loginBanner(),
+        ],
+      ),
     );
   }
 }

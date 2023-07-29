@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Widgets/custom_button.dart';
 
 import '../Constant/Constant.dart';
-import 'HomeScreen.dart';
+import '../Widgets/bottom_nav.dart';
+// import 'HomeScreen.dart';
 
 class MyScreen extends StatelessWidget {
   const MyScreen({super.key});
@@ -17,7 +18,7 @@ class MyScreen extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   kPrimaryLightColor,
-                  Color.fromARGB(255, 0, 183, 255),
+                  kPrimaryColor,
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -72,10 +73,10 @@ class MyScreen extends StatelessWidget {
                   CustomButton(
                     text: 'Get Started',
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomeScreen()),
+                            builder: (context) => const CustomBottomNavBar()),
                         // Hospital_Login()),
                       );
                     },

@@ -61,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                   bottomRight: Radius.circular(20),
                 ),
                 child: Container(
-                  color: kPrimaryColor,
+                  color: kSecondaryColor,
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,14 +72,20 @@ class ProfileScreen extends StatelessWidget {
                           children: [
                             Text("Login Your Profile!",
                                 style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold)),
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold)),
                             SizedBox(height: 8),
                             Text(" Save your important inoformation",
                                 style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.w300)),
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300)),
                             Text("so its always in your fingertips",
                                 style: TextStyle(
-                                    fontSize: 12, fontWeight: FontWeight.w300)),
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300)),
                           ],
                         ),
                       ),
@@ -92,7 +98,7 @@ class ProfileScreen extends StatelessWidget {
                                 builder: (context) => const Patient_Login()),
                           );
                         },
-                        backgroundColor: kSecondaryColor,
+                        backgroundColor: kPrimaryColor,
                       ),
                     ],
                   ),

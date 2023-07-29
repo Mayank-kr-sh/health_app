@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:health_app/Frontend/Constant/Constant.dart';
+import 'package:health_app/Frontend/Widgets/custom_button.dart';
 
 class ContactScreen extends StatelessWidget {
   const ContactScreen({super.key});
@@ -11,19 +12,17 @@ class ContactScreen extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: kPrimaryLightColor,
+          backgroundColor: kSecondaryColor,
           elevation: 0,
-          title: SvgPicture.asset(
-            'assets/icons/contact_us.svg',
-            width: 33,
-          ),
+          title: SvgPicture.asset('assets/icons/contact_us.svg',
+              width: 33, color: Colors.white),
         ),
         body: Column(
           children: [
             Container(
                 height: 100,
                 width: screenWidth,
-                color: kPrimaryLightColor,
+                color: kSecondaryColor,
                 child: const Column(
                   children: [
                     SizedBox(
@@ -34,7 +33,7 @@ class ContactScreen extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w600,
-                          color: Colors.black87),
+                          color: Colors.white),
                     ),
                     SizedBox(
                       height: 20,
@@ -44,17 +43,27 @@ class ContactScreen extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.w600,
-                          color: Colors.black54),
+                          color: Colors.white),
                     ),
                     SizedBox(
                       height: 20,
                     ),
                   ],
                 )),
+            Container(
+              color: Colors.white,
+              child: Divider(
+                color: kPrimaryColor,
+                height: 2,
+                thickness: 3,
+                indent: screenWidth,
+                endIndent: 10,
+              ),
+            ),
             Expanded(
               child: Container(
                   height: 100,
-                  color: kPrimaryColor,
+                  color: kPrimaryLightColor,
                   width: screenWidth,
                   child: SingleChildScrollView(
                     child: Column(
@@ -254,24 +263,11 @@ class ContactScreen extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                        ElevatedButton(
+                        CustomButton(
+                          text: "Schedule a demo",
                           onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: kPrimaryLightColor,
-                            foregroundColor: Colors.black,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 12.0, horizontal: 24.0),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          child: const Text(
-                            "Schedule A Demo",
-                            style: TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black87),
-                          ),
+                          backgroundColor: kSecondaryColor,
+                          textColor: Colors.white,
                         ),
                         const SizedBox(
                           height: 40,

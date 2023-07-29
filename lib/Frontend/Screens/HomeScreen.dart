@@ -53,58 +53,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.all(8.0),
-            //   child: Center(
-            //     child: Text(
-            //       'Tailored products that fit your needs',
-            //       style: TextStyle(
-            //         fontSize: 18,
-            //         fontWeight: FontWeight.bold,
-            //         color: Color.fromARGB(255, 105, 102, 102),
-            //       ),
-            //     ),
-            //   ),
-            // ),
-            // SingleChildScrollView(
-            //   scrollDirection: Axis.horizontal,
-            //   child: Row(
-            //     children: [
-            //       SlidingContainer(
-            //         text: 'Private Practices & Clinics',
-            //         imagePath: 'assets/images/clinic.png',
-            //         desc:
-            //             'Web-based EHR technology for your independent practice',
-            //         buttonText: 'Explore',
-            //         onPressed: () {},
-            //       ),
-            //       SlidingContainer(
-            //         text: 'Hospitals',
-            //         imagePath: 'assets/images/hospital.png',
-            //         buttonText: 'Explore',
-            //         desc:
-            //             'An integrated hospital management system to manage all hospital operations',
-            //         onPressed: () {},
-            //       ),
-            //       SlidingContainer(
-            //         text: 'Pharmacies',
-            //         imagePath: 'assets/images/pharmacy.png',
-            //         buttonText: 'Explore',
-            //         desc:
-            //             'Comprehensive pharmacy management system to manage your pharmacy needs',
-            //         onPressed: () {},
-            //       ),
-            //       SlidingContainer(
-            //         text: 'Labs',
-            //         imagePath: 'assets/images/lab.png',
-            //         desc:
-            //             'A web-based lab management software that supports your modern laboratory operations',
-            //         buttonText: 'Explore',
-            //         onPressed: () {},
-            //       )
-            //     ],
-            //   ),
-            // ),
             Container(height: 10),
             Container(
               color: Colors.white,

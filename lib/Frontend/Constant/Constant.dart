@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color.fromARGB(232, 13, 204, 191);
-const kPrimaryLightColor = Color.fromARGB(255, 140, 216, 246);
+const kPrimaryColor = Color.fromARGB(255, 56, 182, 255);
+const kPrimaryLightColor = Color.fromARGB(255, 152, 205, 249);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
   colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
 );
-const kSecondaryColor = Color.fromARGB(255, 55, 164, 207);
+const kSecondaryColor = Color.fromARGB(255, 40, 81, 143);
 const kTextColor = Color(0xFF757575);
 
 final List<String> imageList = [

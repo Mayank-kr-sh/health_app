@@ -31,7 +31,7 @@ class MiddleBanner extends StatelessWidget {
         ),
       ),
       child: Container(
-        color: const Color(0xff188ba0).withOpacity(0.8),
+        color: const Color(0xff38b6ff).withOpacity(0.8),
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [

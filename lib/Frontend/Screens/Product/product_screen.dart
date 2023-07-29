@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../Constant/Constant.dart';
 import 'explore_screen.dart';
@@ -17,9 +16,10 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kPrimaryLightColor,
       appBar: AppBar(
         backgroundColor: kPrimaryLightColor,
-        elevation: 2,
+        elevation: 0,
         title: const Text(
           "Tailored products that fit your needs",
           style: TextStyle(
@@ -104,7 +104,7 @@ class _ProductScreenState extends State<ProductScreen> {
               child: Container(
                 padding:
                     const EdgeInsets.only(top: 0), // Set top padding to zero
-                color: kPrimaryLightColor,
+                color: kPrimaryColor,
                 height: MediaQuery.of(context).size.height * 0.45,
                 width: MediaQuery.of(context).size.width,
                 child: SingleChildScrollView(
@@ -206,7 +206,6 @@ class _ProductScreenState extends State<ProductScreen> {
       builder: (context, constraints) {
         final orientation = MediaQuery.of(context).orientation;
         final screenWidth = constraints.maxWidth;
-        final screenHeight = constraints.maxHeight;
 
         return Column(
           children: [
@@ -215,11 +214,14 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.grey.shade700,
+                color: Colors.black,
               ),
+            ),
+            const SizedBox(
+              height: 5,
             ),
             Container(
               width: orientation == Orientation.portrait
@@ -227,14 +229,14 @@ class _ProductScreenState extends State<ProductScreen> {
                   : screenWidth * 0.48,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white, width: 1),
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(3.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 2),
-                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: Colors.white, width: 1),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   padding: const EdgeInsets.all(7),
                   child: Image.asset(
@@ -249,7 +251,7 @@ class _ProductScreenState extends State<ProductScreen> {
             ElevatedButton(
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
+                backgroundColor: kSecondaryColor,
                 padding: const EdgeInsets.symmetric(
                     vertical: 12.0, horizontal: 24.0),
                 shape: RoundedRectangleBorder(

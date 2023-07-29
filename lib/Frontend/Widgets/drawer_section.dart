@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/Widgets/custom_button.dart';
+// import 'package:health_app/Frontend/auth/hospital_login.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../auth/doctor_login.dart';
-import '../auth/patient_login.dart';
+import '../auth/patient_register.dart';
 
 class DrawerSection extends StatelessWidget {
   void _navigateToProvidersScreen(BuildContext context) {
@@ -19,7 +20,7 @@ class DrawerSection extends StatelessWidget {
   void _navigateToPatientScreen(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const Patient_Login()),
+      MaterialPageRoute(builder: (context) => const PatientRegister()),
     );
   }
 
@@ -38,33 +39,36 @@ class DrawerSection extends StatelessWidget {
       backgroundColor: kPrimaryLightColor,
       child: ListView(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Company Logo
-              Padding(
-                padding: const EdgeInsets.only(top: 8, left: 10, bottom: 8),
-                child: SvgPicture.asset(
-                  'assets/images/logo2.svg',
-                  width: 180,
-                ),
-              ),
-            ],
-          ),
+          // const Column(
+          //   crossAxisAlignment: CrossAxisAlignment.start,
+          //   children: [
+          //     // Company Logo
+          const Padding(
+              padding: EdgeInsets.only(top: 8, left: 10, bottom: 8),
+              child: Text(
+                "Royal Hospital",
+                style: TextStyle(fontSize: 19, fontWeight: FontWeight.w900),
+              )),
+          //   ],
+          // ),
           Padding(
-            padding: const EdgeInsets.only(left: 8, right: 4),
+            padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
             child: CustomButton(
-              onPressed: () => _navigateToProvidersScreen(context),
-              text: 'Providers Login',
-              backgroundColor: kPrimaryColor,
-            ),
+                onPressed: () => _navigateToProvidersScreen(context),
+                text: 'Providers Login',
+                backgroundColor: kPrimaryColor,
+                textColor: Colors.white),
+          ),
+          const SizedBox(
+            height: 10,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 3, right: 6),
+            padding: const EdgeInsets.only(left: 30, right: 30),
             child: CustomButton(
               onPressed: () => _navigateToPatientScreen(context),
               text: 'Patient Login',
               backgroundColor: kSecondaryColor,
+              textColor: Colors.white,
             ),
           ),
           const Divider(),

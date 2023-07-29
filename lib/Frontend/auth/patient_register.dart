@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/Widgets/custom_button.dart';
 import 'package:health_app/Frontend/auth/patient_login.dart';
 
@@ -73,11 +74,10 @@ class _PatientRegisterState extends State<PatientRegister> {
       builder: (context, child) {
         return Theme(
           data: ThemeData.light().copyWith(
-            primaryColor: const Color(
-              0xfff0ca4d,
-            ), // Change the date picker color to green
-            hintColor: const Color(0xfff0ca4d),
-            colorScheme: const ColorScheme.light(primary: Color(0xfff0ca4d)),
+            primaryColor:
+                kPrimaryLightColor, // Change the date picker color to green
+            hintColor: kPrimaryColor,
+            colorScheme: const ColorScheme.light(primary: kPrimaryLightColor),
             buttonTheme:
                 const ButtonThemeData(textTheme: ButtonTextTheme.primary),
           ),
@@ -192,10 +192,8 @@ class _PatientRegisterState extends State<PatientRegister> {
                     onPressed: () {
                       // Toggle password visibility
                     },
-                    icon: const Icon(
-                      Icons.remove_red_eye,
-                      color: Color(0xfff0ca4d),
-                    ),
+                    icon: const Icon(Icons.remove_red_eye,
+                        color: kSecondaryColor),
                   )
                 : null,
             // Add the prefix icon
@@ -215,10 +213,11 @@ class _PatientRegisterState extends State<PatientRegister> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 243, 241, 241),
+      backgroundColor: kPrimaryLightColor,
       key: _scaffoldMessengerKey,
       appBar: AppBar(
-        backgroundColor: Color(0xfff0ca4d),
+        backgroundColor: kPrimaryLightColor,
+        elevation: 0,
         title: const Text(
           'Create an Account',
           style: TextStyle(color: Colors.black),
@@ -242,7 +241,7 @@ class _PatientRegisterState extends State<PatientRegister> {
             autovalidateMode: AutovalidateMode.disabled,
             child: Container(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 243, 241, 241),
+                color: kPrimaryColor,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Column(
@@ -387,8 +386,9 @@ class _PatientRegisterState extends State<PatientRegister> {
                           );
                         }
                       },
-                      backgroundColor: const Color(0xfff0ca4d),
+                      backgroundColor: kSecondaryColor,
                       text: 'Create an Account',
+                      textColor: Colors.white,
                     ),
                   ),
                   Row(
@@ -406,7 +406,7 @@ class _PatientRegisterState extends State<PatientRegister> {
                         child: const Text(
                           'Login',
                           style: TextStyle(
-                            color: Color(0xfff0ca4d),
+                            color: Colors.white,
                           ),
                         ),
                       ),

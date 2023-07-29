@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/auth/layout.dart';
 import 'package:health_app/Frontend/auth/staff_login.dart';
 
@@ -39,6 +40,7 @@ class Doctor_Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kPrimaryLightColor,
       appBar: AppBar(
         title: const Text(
           'Royal Hospital Doctor Portal',
@@ -52,24 +54,21 @@ class Doctor_Login extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios_sharp),
           color: Colors.black,
         ),
-        backgroundColor: const Color(0xff20b2aa),
+        backgroundColor: kPrimaryLightColor,
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: SingleChildScrollView(
-          child: ScreenLayout(
-            bgColor1: const Color(0xff20b2aa),
-            title: 'Simplify your next appointment',
-            bgColor2: const Color(0xff6699CC),
-            button1: 'Hospital Login',
-            bgColor3: const Color(0xffac8a5c),
-            button2: 'Staff Login',
-            onPressed2: () => _navigateToStaffScreen(context),
-            onPressed3: () => _navigateToForgetScreen(context),
-            onPressed4: () => _navigateToRegister(context),
-            isRegister: true,
-          ),
+      body: SingleChildScrollView(
+        child: ScreenLayout(
+          bgColor1: kSecondaryColor,
+          title: 'Simplify your next appointment',
+          bgColor2: kPrimaryColor,
+          button1: 'Hospital Login',
+          bgColor3: kSecondaryColor,
+          button2: 'Staff Login',
+          onPressed2: () => _navigateToStaffScreen(context),
+          onPressed3: () => _navigateToForgetScreen(context),
+          onPressed4: () => _navigateToRegister(context),
+          isRegister: true,
         ),
       ),
     );
