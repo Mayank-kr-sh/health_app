@@ -96,7 +96,7 @@ class _Patient_LoginState extends State<Patient_Login> {
       builder: (BuildContext context) {
         return const ForgotPasswordDialog(
           bgColor1: Color(0xfff0ca4d),
-          title: 'FORGOT YOUR PASSWORD - PATIENTS & INDIVIDUALS',
+          title: 'Forget Your Password Patients ',
         );
       },
     );
@@ -128,17 +128,19 @@ class _Patient_LoginState extends State<Patient_Login> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back_ios_sharp),
           color: Colors.black,
         ),
         title: const Text(
-          'Halemind Patient Portal',
+          'Royal Hospital Patient Portal',
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 2,
+        backgroundColor: const Color(0xfff0ca4d),
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -158,7 +160,7 @@ class _Patient_LoginState extends State<Patient_Login> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
+                      color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 4,
                       offset: const Offset(0, 3), // changes position of shadow
@@ -170,7 +172,7 @@ class _Patient_LoginState extends State<Patient_Login> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Text(
-                      'Welcome to Halemind Patient Portal',
+                      'Welcome to Royal Hospital Patient Portal',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
@@ -197,7 +199,7 @@ class _Patient_LoginState extends State<Patient_Login> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
+                      color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 4,
                       offset: const Offset(0, 4), // changes position of shadow

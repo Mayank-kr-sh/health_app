@@ -4,7 +4,6 @@ import 'package:health_app/Frontend/auth/staff_login.dart';
 
 import 'forget.dart';
 import 'form_doctor.dart';
-import 'hospital_login.dart';
 
 // ignore: camel_case_types
 class Doctor_Login extends StatelessWidget {
@@ -27,13 +26,6 @@ class Doctor_Login extends StatelessWidget {
     );
   }
 
-  void _navigateToHospitalScreen(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Hospital_Login()),
-    );
-  }
-
   void _navigateToRegister(BuildContext context) {
     Navigator.push(
       context,
@@ -48,19 +40,29 @@ class Doctor_Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 2,
+        title: const Text(
+          'Royal Hospital Doctor Portal',
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios_sharp),
+          color: Colors.black,
+        ),
+        backgroundColor: const Color(0xff20b2aa),
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(
           child: ScreenLayout(
-            disc: 'Simplify your next appointment',
             bgColor1: const Color(0xff20b2aa),
-            title: 'LOGIN FOR DOCTORS',
+            title: 'Simplify your next appointment',
             bgColor2: const Color(0xff6699CC),
             button1: 'Hospital Login',
-            onPressed1: () => _navigateToHospitalScreen(context),
             bgColor3: const Color(0xffac8a5c),
             button2: 'Staff Login',
             onPressed2: () => _navigateToStaffScreen(context),

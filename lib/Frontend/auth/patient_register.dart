@@ -102,35 +102,38 @@ class _PatientRegisterState extends State<PatientRegister> {
         },
         child: AbsorbPointer(
           absorbing: true,
-          child: TextFormField(
-            enabled: false,
-            decoration: InputDecoration(
-              labelText: 'Date of Birth',
-              filled: true,
-              fillColor: Colors.grey[200],
-              border: const OutlineInputBorder(),
-              contentPadding: const EdgeInsets.symmetric(
-                vertical: 16.0,
-                horizontal: 16.0,
-              ),
-              suffixIcon: const Icon(Icons.calendar_today),
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.grey,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16.0), // Rounded border
+              color: Colors.white, // Filled color
+              boxShadow: [
+                BoxShadow(
+                  color:
+                      const Color(0xfff0ca4d).withOpacity(0.3), // Shadow color
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3),
                 ),
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Color(0xfff0ca4d),
-                ),
-              ),
+              ],
             ),
-            controller: _doctor.dateOfBirth != null
-                ? TextEditingController(
-                    text:
-                        "${_doctor.dateOfBirth!.day}/${_doctor.dateOfBirth!.month}/${_doctor.dateOfBirth!.year}")
-                : null,
-            validator: (value) => _validateDateOfBirth(_doctor.dateOfBirth),
+            child: TextFormField(
+              enabled: false,
+              decoration: const InputDecoration(
+                labelText: 'Date of Birth',
+                border: InputBorder.none, // Remove the default border
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 12.0,
+                  horizontal: 16.0,
+                ),
+                suffixIcon: Icon(Icons.calendar_today),
+              ),
+              controller: _doctor.dateOfBirth != null
+                  ? TextEditingController(
+                      text:
+                          "${_doctor.dateOfBirth!.day}/${_doctor.dateOfBirth!.month}/${_doctor.dateOfBirth!.year}")
+                  : null,
+              validator: (value) => _validateDateOfBirth(_doctor.dateOfBirth),
+            ),
           ),
         ),
       ),
@@ -143,56 +146,67 @@ class _PatientRegisterState extends State<PatientRegister> {
     bool isPassword = false,
     TextInputAction? textInputAction,
     TextInputType? keyboardType,
+    IconData? prefixIcon,
   }) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: TextFormField(
-        controller: controller,
-        cursorColor: const Color(0xfff0ca4d),
-        obscureText: isPassword,
-        textInputAction: textInputAction,
-        keyboardType: keyboardType,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'This field is required';
-          }
-          // Add more validation logic for specific fields (e.g., email, password).
-          return null;
-        },
-        decoration: InputDecoration(
-          labelText: labelText,
-          labelStyle: const TextStyle(
-            color: Colors.grey,
-            fontSize: 16.0,
-          ),
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16.0), // Rounded border
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xfff0ca4d).withOpacity(0.3),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: TextFormField(
+          controller: controller,
+          cursorColor: const Color(0xfff0ca4d),
+          obscureText: isPassword,
+          textInputAction: textInputAction,
+          keyboardType: keyboardType,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'This field is required';
+            }
+            // Add more validation logic for specific fields (e.g., email, password).
+            return null;
+          },
+          decoration: InputDecoration(
+            labelText: labelText,
+            labelStyle: const TextStyle(
               color: Colors.grey,
+              fontSize: 16.0,
             ),
-          ),
-          focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Color(0xfff0ca4d),
+            border: InputBorder.none,
+            contentPadding: const EdgeInsets.symmetric(
+              vertical: 12.0,
+              horizontal: 16.0,
             ),
+            suffixIcon: isPassword
+                ? IconButton(
+                    onPressed: () {
+                      // Toggle password visibility
+                    },
+                    icon: const Icon(
+                      Icons.remove_red_eye,
+                      color: Color(0xfff0ca4d),
+                    ),
+                  )
+                : null,
+            // Add the prefix icon
+            prefixIcon: prefixIcon != null
+                ? Icon(
+                    prefixIcon,
+                    color: Colors.grey,
+                    size: 20,
+                  )
+                : null,
           ),
-          border: const OutlineInputBorder(),
-          filled: true,
-          fillColor: Colors.grey[200],
-          contentPadding: const EdgeInsets.symmetric(
-            vertical: 16.0,
-            horizontal: 16.0,
-          ),
-          suffixIcon: isPassword
-              ? IconButton(
-                  onPressed: () {
-                    // Toggle password visibility
-                  },
-                  icon: const Icon(
-                    Icons.remove_red_eye,
-                    color: Color(0xfff0ca4d),
-                  ),
-                )
-              : null,
         ),
       ),
     );
@@ -201,9 +215,10 @@ class _PatientRegisterState extends State<PatientRegister> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 243, 241, 241),
       key: _scaffoldMessengerKey,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xfff0ca4d),
         title: const Text(
           'Create an Account',
           style: TextStyle(color: Colors.black),
@@ -233,95 +248,104 @@ class _PatientRegisterState extends State<PatientRegister> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                      color: Color(0xfff0ca4d),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10),
-                      ),
-                    ),
-                    height: 50,
-                    child: const Center(
-                      child: Text(
-                        'CREATE YOUR ACCOUNT - PATIENTS & INDIVIDUALS',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ),
+                  const SizedBox(height: 10),
                   _buildTextField(
-                    labelText: 'Email or Phone Number',
+                    labelText: 'Email Address',
                     controller: _doctor.emailOrPhoneController,
                     keyboardType: TextInputType.emailAddress,
+                    prefixIcon: Icons.email,
                   ),
                   _buildTextField(
                     labelText: 'Password',
                     controller: _doctor.passwordController,
                     isPassword: true,
                     textInputAction: TextInputAction.next,
+                    prefixIcon: Icons.lock,
                   ),
                   _buildTextField(
-                    labelText: 'First Name',
+                    labelText: 'Enter Name',
                     controller: _doctor.firstNameController,
                     textInputAction: TextInputAction.next,
+                    prefixIcon: Icons.person,
                   ),
                   _buildTextField(
-                    labelText: 'Last Name',
-                    controller: _doctor.lastNameController,
-                    textInputAction: TextInputAction.next,
-                  ),
-                  _buildTextField(
-                    labelText: 'Registration Number',
+                    labelText: 'Phone Number',
                     controller: _doctor.registrationNumberController,
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.number,
+                    prefixIcon: Icons.phone,
                   ),
-                  _buildDatePickerField(),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: DropdownButtonFormField<String>(
-                      items: const [
-                        DropdownMenuItem(value: 'Male', child: Text('Male')),
-                        DropdownMenuItem(
-                            value: 'Female', child: Text('Female')),
-                        DropdownMenuItem(value: 'Other', child: Text('Other')),
-                      ],
-                      onChanged: (value) {
-                        // Handle dropdown value changes.
-                        setState(() {
-                          _doctor.gender = value;
-                        });
-                      },
-                      decoration: InputDecoration(
-                        labelText: 'Gender',
-                        labelStyle: const TextStyle(
-                          color: Colors.grey,
-                          fontSize: 16.0,
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[200],
-                        border: const OutlineInputBorder(),
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 16.0,
-                          horizontal: 16.0,
-                        ),
-                        enabledBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey,
-                          ),
-                        ),
-                        focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xfff0ca4d),
+                  Row(
+                    children: [
+                      Expanded(child: _buildDatePickerField()),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16.0),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      const Color(0xfff0ca4d).withOpacity(0.3),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: Row(
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 16.0),
+                                  child: Icon(
+                                    Icons.male,
+                                    color: Colors.grey,
+                                    size: 20,
+                                  ),
+                                ),
+                                const SizedBox(width: 8.0),
+                                Expanded(
+                                  child: DropdownButtonFormField<String>(
+                                    items: const [
+                                      DropdownMenuItem(
+                                          value: 'Male', child: Text('Male')),
+                                      DropdownMenuItem(
+                                          value: 'Female',
+                                          child: Text('Female')),
+                                      DropdownMenuItem(
+                                          value: 'Other', child: Text('Other')),
+                                    ],
+                                    onChanged: (value) {
+                                      // Handle dropdown value changes.
+                                      setState(() {
+                                        _doctor.gender = value;
+                                      });
+                                    },
+                                    decoration: const InputDecoration(
+                                      labelText: 'Gender',
+                                      labelStyle: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 16.0,
+                                      ),
+
+                                      border: InputBorder
+                                          .none, // Remove border to use the custom rounded border of the container
+                                      contentPadding: EdgeInsets.symmetric(
+                                        vertical: 8.0,
+                                        horizontal: 1.0,
+                                      ),
+                                    ),
+                                    validator: _validateGender,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                      validator: _validateGender,
-                    ),
+                    ],
                   ),
                   const SizedBox(height: 16.0),
                   const Text(
@@ -376,7 +400,7 @@ class _PatientRegisterState extends State<PatientRegister> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Patient_Login()),
+                                builder: (context) => const Patient_Login()),
                           );
                         },
                         child: const Text(

@@ -3,7 +3,7 @@ import 'package:health_app/Frontend/Screens/profile/body.dart';
 import 'package:health_app/Frontend/Widgets/custom_button.dart';
 
 import '../../Constant/Constant.dart';
-import '../../auth/hospital_login.dart';
+import '../../auth/Patient_Login.dart';
 
 class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
@@ -29,7 +29,7 @@ class ProfileScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const Hospital_Login()));
+                          builder: (context) => const Patient_Login()));
                 },
                 child: const Row(
                   children: [
@@ -89,7 +89,7 @@ class ProfileScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Hospital_Login()),
+                                builder: (context) => const Patient_Login()),
                           );
                         },
                         backgroundColor: kSecondaryColor,

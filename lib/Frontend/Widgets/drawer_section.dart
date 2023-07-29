@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/Widgets/custom_button.dart';
-import 'package:health_app/Frontend/auth/hospital_login.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../auth/patient_register.dart';
+import '../auth/doctor_login.dart';
+import '../auth/patient_login.dart';
 
 class DrawerSection extends StatelessWidget {
   void _navigateToProvidersScreen(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const Hospital_Login()),
+      MaterialPageRoute(builder: (context) => const Doctor_Login()),
     );
   }
 
   void _navigateToPatientScreen(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const PatientRegister()),
+      MaterialPageRoute(builder: (context) => const Patient_Login()),
     );
   }
 
