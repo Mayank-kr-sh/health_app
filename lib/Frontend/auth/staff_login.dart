@@ -18,7 +18,7 @@ class Staff_Login extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return const ForgotPasswordDialog(
-          bgColor1: kPrimaryColor,
+          bgColor1: kSecondaryColor,
           title: 'FORGOT YOUR PASSWORD - STAFF',
         );
       },
@@ -47,21 +47,18 @@ class Staff_Login extends StatelessWidget {
         backgroundColor: kPrimaryLightColor,
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: SingleChildScrollView(
-          child: ScreenLayout(
-            bgColor1: kSecondaryColor,
-            title: 'We are here to help simplify your day',
-            button1: 'Hospital Login',
-            bgColor2: const Color(0xff6699CC),
-            button2: 'Doctor Login',
-            bgColor3: kSecondaryColor,
-            onPressed2: () => _navigateToDoctorScreen(context),
-            onPressed3: () => _navigateToForgetScreen(context),
-            onPressed4: () => _navigateToForgetScreen(context),
-            isRegister: false,
-          ),
+      body: SingleChildScrollView(
+        child: ScreenLayout(
+          bgColor1: kSecondaryColor,
+          title: 'We are here to help simplify your day',
+          button1: 'Hospital Login',
+          bgColor2: kSecondaryColor,
+          button2: 'Doctor Login',
+          bgColor3: kSecondaryColor,
+          onPressed2: () => _navigateToDoctorScreen(context),
+          onPressed3: () => _navigateToForgetScreen(context),
+          onPressed4: () => _navigateToForgetScreen(context),
+          isRegister: false,
         ),
       ),
     );

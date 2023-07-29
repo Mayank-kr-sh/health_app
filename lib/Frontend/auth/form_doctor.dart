@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Widgets/custom_button.dart';
 
+import '../Constant/Constant.dart';
+
 class Doctor {
   TextEditingController emailOrPhoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -96,7 +98,7 @@ class _DoctorRegistrationPageState extends State<DoctorRegistrationPage> {
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xff20b2aa).withOpacity(0.3),
+                  color: kSecondaryColor.withOpacity(0.3),
                   spreadRadius: 2,
                   blurRadius: 5,
                   offset: const Offset(0, 3),
@@ -144,7 +146,7 @@ class _DoctorRegistrationPageState extends State<DoctorRegistrationPage> {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: const Color(0xff20b2aa).withOpacity(0.3),
+              color: kSecondaryColor.withOpacity(0.3),
               spreadRadius: 2,
               blurRadius: 5,
               offset: const Offset(0, 3),
@@ -153,7 +155,7 @@ class _DoctorRegistrationPageState extends State<DoctorRegistrationPage> {
         ),
         child: TextFormField(
           controller: controller,
-          cursorColor: const Color(0xff20b2aa),
+          cursorColor: kSecondaryColor,
           obscureText: isPassword,
           textInputAction: textInputAction,
           keyboardType: keyboardType,
@@ -190,7 +192,7 @@ class _DoctorRegistrationPageState extends State<DoctorRegistrationPage> {
                     },
                     icon: const Icon(
                       Icons.remove_red_eye,
-                      color: Color(0xff20b2aa),
+                      color: kSecondaryColor,
                     ),
                   )
                 : null,
@@ -203,10 +205,10 @@ class _DoctorRegistrationPageState extends State<DoctorRegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 243, 241, 241),
+      backgroundColor: kPrimaryLightColor,
       key: _scaffoldMessengerKey,
       appBar: AppBar(
-        backgroundColor: const Color(0xff20b2aa),
+        backgroundColor: kPrimaryLightColor,
         title: const Text(
           'Create an Account - Doctors',
           style: TextStyle(color: Colors.black),
@@ -229,161 +231,177 @@ class _DoctorRegistrationPageState extends State<DoctorRegistrationPage> {
           child: Form(
             key: _formKey,
             autovalidateMode: AutovalidateMode.disabled,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const SizedBox(height: 10),
-                _buildTextField(
-                  labelText: 'Email Address',
-                  controller: _doctor.emailOrPhoneController,
-                  keyboardType: TextInputType.emailAddress,
-                  prefixIcon: Icons.email_outlined,
-                ),
-                _buildTextField(
-                  labelText: 'Enter Name',
-                  controller: _doctor.firstNameController,
-                  textInputAction: TextInputAction.next,
-                  prefixIcon: Icons.person,
-                ),
-                _buildTextField(
-                  labelText: 'Password',
-                  controller: _doctor.passwordController,
-                  isPassword: true,
-                  textInputAction: TextInputAction.next,
-                  prefixIcon: Icons.lock,
-                ),
-                _buildTextField(
-                  labelText: 'Registration Number',
-                  controller: _doctor.registrationNumberController,
-                  textInputAction: TextInputAction.next,
-                  keyboardType: TextInputType.number,
-                  prefixIcon: Icons.format_list_numbered_rounded,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: _buildDatePickerField(),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16.0),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0xff20b2aa).withOpacity(0.3),
-                                spreadRadius: 2,
-                                blurRadius: 5,
-                                offset: const Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            children: [
-                              const Padding(
-                                padding: EdgeInsets.only(left: 16.0),
-                                child: Icon(
-                                  Icons.male,
-                                  color: Colors.grey,
-                                  size: 20,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.09),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: kPrimaryColor.withOpacity(0.8),
+                    spreadRadius: 2,
+                    blurRadius: 4,
+                    offset: const Offset(0, 4), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 10),
+                  _buildTextField(
+                    labelText: 'Email Address',
+                    controller: _doctor.emailOrPhoneController,
+                    keyboardType: TextInputType.emailAddress,
+                    prefixIcon: Icons.email_outlined,
+                  ),
+                  _buildTextField(
+                    labelText: 'Enter Name',
+                    controller: _doctor.firstNameController,
+                    textInputAction: TextInputAction.next,
+                    prefixIcon: Icons.person,
+                  ),
+                  _buildTextField(
+                    labelText: 'Password',
+                    controller: _doctor.passwordController,
+                    isPassword: true,
+                    textInputAction: TextInputAction.next,
+                    prefixIcon: Icons.lock,
+                  ),
+                  _buildTextField(
+                    labelText: 'Registration Number',
+                    controller: _doctor.registrationNumberController,
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.number,
+                    prefixIcon: Icons.format_list_numbered_rounded,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _buildDatePickerField(),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16.0),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: kSecondaryColor.withOpacity(0.3),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: const Offset(0, 3),
                                 ),
-                              ),
-                              const SizedBox(width: 8.0),
-                              Expanded(
-                                child: DropdownButtonFormField<String>(
-                                  items: const [
-                                    DropdownMenuItem(
-                                        value: 'Male', child: Text('Male')),
-                                    DropdownMenuItem(
-                                        value: 'Female', child: Text('Female')),
-                                    DropdownMenuItem(
-                                        value: 'Other', child: Text('Other')),
-                                  ],
-                                  onChanged: (value) {
-                                    // Handle dropdown value changes.
-                                    setState(() {
-                                      _doctor.gender = value;
-                                    });
-                                  },
-                                  decoration: const InputDecoration(
-                                    labelText: 'Gender',
-                                    labelStyle: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 16.0,
-                                    ),
-                                    border: InputBorder
-                                        .none, // Remove border to use the custom rounded border of the container
-                                    contentPadding: EdgeInsets.symmetric(
-                                      vertical: 8.0,
-                                      horizontal: 1.0,
-                                    ),
+                              ],
+                            ),
+                            child: Row(
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 16.0),
+                                  child: Icon(
+                                    Icons.male,
+                                    color: Colors.grey,
+                                    size: 20,
                                   ),
-                                  validator: _validateGender,
                                 ),
-                              ),
-                            ],
+                                const SizedBox(width: 8.0),
+                                Expanded(
+                                  child: DropdownButtonFormField<String>(
+                                    items: const [
+                                      DropdownMenuItem(
+                                          value: 'Male', child: Text('Male')),
+                                      DropdownMenuItem(
+                                          value: 'Female',
+                                          child: Text('Female')),
+                                      DropdownMenuItem(
+                                          value: 'Other', child: Text('Other')),
+                                    ],
+                                    onChanged: (value) {
+                                      // Handle dropdown value changes.
+                                      setState(() {
+                                        _doctor.gender = value;
+                                      });
+                                    },
+                                    decoration: const InputDecoration(
+                                      labelText: 'Gender',
+                                      labelStyle: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 16.0,
+                                      ),
+                                      border: InputBorder
+                                          .none, // Remove border to use the custom rounded border of the container
+                                      contentPadding: EdgeInsets.symmetric(
+                                        vertical: 8.0,
+                                        horizontal: 1.0,
+                                      ),
+                                    ),
+                                    validator: _validateGender,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                _buildTextField(
-                  labelText: 'Speciality',
-                  controller: _doctor.specialityController,
-                  textInputAction: TextInputAction.done,
-                  prefixIcon: Icons.medical_services,
-                ),
-                const SizedBox(height: 16.0),
-                const Text(
-                  'By clicking "Create an account," you agree to our Terms & Conditions and Privacy Policy.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                const SizedBox(height: 10.0),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CustomButton(
-                    onPressed: () {
-                      _formKey.currentState!.validate();
-                      if (_formKey.currentState!.validate()) {
-                        final emailOrPhone =
-                            _doctor.emailOrPhoneController.text;
-                        final password = _doctor.passwordController.text;
-                        final firstName = _doctor.firstNameController.text;
-                        final lastName = _doctor.lastNameController.text;
-                        final registrationNumber =
-                            _doctor.registrationNumberController.text;
-                        final speciality = _doctor.specialityController.text;
-                        final dateOfBirth = _doctor.dateOfBirth;
-                        final gender = _doctor.gender;
-                        print('Email or Phone: $emailOrPhone');
-                        print('Password: $password');
-                        print('First Name: $firstName');
-                        print('Last Name: $lastName');
-                        print('Registration Number: $registrationNumber');
-                        print('Speciality: $speciality');
-                        print('Date of Birth: $dateOfBirth');
-                        print('Gender: $gender');
-                        _clearFormFields();
-                      } else {
-                        // Show a SnackBar with an error message.
-                        _scaffoldMessengerKey.currentState!.showSnackBar(
-                          const SnackBar(
-                            content:
-                                Text('Please fill all the required fields.'),
-                          ),
-                        );
-                      }
-                    },
-                    backgroundColor: const Color(0xff20b2aa),
-                    text: 'Create an Account',
+                    ],
                   ),
-                ),
-                const SizedBox(height: 10.0),
-              ],
+                  _buildTextField(
+                    labelText: 'Speciality',
+                    controller: _doctor.specialityController,
+                    textInputAction: TextInputAction.done,
+                    prefixIcon: Icons.medical_services,
+                  ),
+                  const SizedBox(height: 16.0),
+                  const Text(
+                    'By clicking "Create an account," you agree to our Terms & Conditions and Privacy Policy.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 12.0),
+                  ),
+                  const SizedBox(height: 10.0),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CustomButton(
+                      onPressed: () {
+                        _formKey.currentState!.validate();
+                        if (_formKey.currentState!.validate()) {
+                          final emailOrPhone =
+                              _doctor.emailOrPhoneController.text;
+                          final password = _doctor.passwordController.text;
+                          final firstName = _doctor.firstNameController.text;
+                          final lastName = _doctor.lastNameController.text;
+                          final registrationNumber =
+                              _doctor.registrationNumberController.text;
+                          final speciality = _doctor.specialityController.text;
+                          final dateOfBirth = _doctor.dateOfBirth;
+                          final gender = _doctor.gender;
+                          print('Email or Phone: $emailOrPhone');
+                          print('Password: $password');
+                          print('First Name: $firstName');
+                          print('Last Name: $lastName');
+                          print('Registration Number: $registrationNumber');
+                          print('Speciality: $speciality');
+                          print('Date of Birth: $dateOfBirth');
+                          print('Gender: $gender');
+                          _clearFormFields();
+                        } else {
+                          // Show a SnackBar with an error message.
+                          _scaffoldMessengerKey.currentState!.showSnackBar(
+                            const SnackBar(
+                              content:
+                                  Text('Please fill all the required fields.'),
+                            ),
+                          );
+                        }
+                      },
+                      backgroundColor: kSecondaryColor,
+                      text: 'Create an Account',
+                      textColor: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 10.0),
+                ],
+              ),
             ),
           ),
         ),

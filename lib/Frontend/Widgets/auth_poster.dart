@@ -56,7 +56,7 @@ class _loginBannerState extends State<loginBanner> {
         _headingText,
         style: const TextStyle(
           fontSize: 20,
-          color: Colors.grey,
+          color: Colors.black87,
           fontWeight: FontWeight.w500,
         ),
       ),

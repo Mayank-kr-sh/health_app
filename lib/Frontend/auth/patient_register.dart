@@ -75,9 +75,9 @@ class _PatientRegisterState extends State<PatientRegister> {
         return Theme(
           data: ThemeData.light().copyWith(
             primaryColor:
-                kPrimaryLightColor, // Change the date picker color to green
+                kSecondaryColor, // Change the date picker color to green
             hintColor: kPrimaryColor,
-            colorScheme: const ColorScheme.light(primary: kPrimaryLightColor),
+            colorScheme: const ColorScheme.light(primary: kSecondaryColor),
             buttonTheme:
                 const ButtonThemeData(textTheme: ButtonTextTheme.primary),
           ),
@@ -108,8 +108,7 @@ class _PatientRegisterState extends State<PatientRegister> {
               color: Colors.white, // Filled color
               boxShadow: [
                 BoxShadow(
-                  color:
-                      const Color(0xfff0ca4d).withOpacity(0.3), // Shadow color
+                  color: kSecondaryColor.withOpacity(0.3), // Shadow color
                   spreadRadius: 2,
                   blurRadius: 5,
                   offset: const Offset(0, 3),
@@ -156,7 +155,7 @@ class _PatientRegisterState extends State<PatientRegister> {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: const Color(0xfff0ca4d).withOpacity(0.3),
+              color: kSecondaryColor.withOpacity(0.3),
               spreadRadius: 2,
               blurRadius: 5,
               offset: const Offset(0, 3),
@@ -165,7 +164,7 @@ class _PatientRegisterState extends State<PatientRegister> {
         ),
         child: TextFormField(
           controller: controller,
-          cursorColor: const Color(0xfff0ca4d),
+          cursorColor: kPrimaryColor,
           obscureText: isPassword,
           textInputAction: textInputAction,
           keyboardType: keyboardType,
@@ -241,8 +240,16 @@ class _PatientRegisterState extends State<PatientRegister> {
             autovalidateMode: AutovalidateMode.disabled,
             child: Container(
               decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(8),
+                color: Colors.black.withOpacity(0.09),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: kPrimaryColor.withOpacity(0.8),
+                    spreadRadius: 2,
+                    blurRadius: 4,
+                    offset: const Offset(0, 4), // changes position of shadow
+                  ),
+                ],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -286,8 +293,7 @@ class _PatientRegisterState extends State<PatientRegister> {
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
-                                  color:
-                                      const Color(0xfff0ca4d).withOpacity(0.3),
+                                  color: kSecondaryColor.withOpacity(0.3),
                                   spreadRadius: 2,
                                   blurRadius: 5,
                                   offset: const Offset(0, 3),
@@ -328,7 +334,6 @@ class _PatientRegisterState extends State<PatientRegister> {
                                         color: Colors.grey,
                                         fontSize: 16.0,
                                       ),
-
                                       border: InputBorder
                                           .none, // Remove border to use the custom rounded border of the container
                                       contentPadding: EdgeInsets.symmetric(

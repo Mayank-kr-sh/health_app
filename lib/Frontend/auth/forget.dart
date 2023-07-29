@@ -118,6 +118,7 @@ class _ForgotPasswordDialogState extends State<ForgotPasswordDialog> {
                           width: double.infinity,
                           height: 40,
                           text: 'Send',
+                          textColor: Colors.white,
                           onPressed: _sendButtonPressed,
                           backgroundColor: widget.bgColor1,
                         ),

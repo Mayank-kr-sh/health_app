@@ -33,10 +33,11 @@ class _Patient_LoginState extends State<Patient_Login> {
             actions: [
               CustomButton(
                   text: 'OK',
+                  textColor: Colors.white,
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  backgroundColor: kPrimaryColor),
+                  backgroundColor: kSecondaryColor),
             ],
           );
         },
@@ -50,11 +51,13 @@ class _Patient_LoginState extends State<Patient_Login> {
             content: const Text('Please enter a valid email address.'),
             actions: [
               CustomButton(
-                  text: 'OK',
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  backgroundColor: kPrimaryColor),
+                text: 'OK',
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                backgroundColor: kSecondaryColor,
+              ),
             ],
           );
         },
@@ -69,19 +72,18 @@ class _Patient_LoginState extends State<Patient_Login> {
             content: const Text('Password must be at least 6 characters long.'),
             actions: [
               CustomButton(
-                  text: 'OK',
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  backgroundColor: kPrimaryColor)
+                text: 'OK',
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                backgroundColor: kSecondaryColor,
+              )
             ],
           );
         },
       );
-    } else {
-      // Proceed with the login process
-      // Implement your login logic here
-    }
+    } else {}
   }
 
   bool _isValidEmail(String email) {
@@ -93,7 +95,7 @@ class _Patient_LoginState extends State<Patient_Login> {
       context: context,
       builder: (BuildContext context) {
         return const ForgotPasswordDialog(
-          bgColor1: Color(0xfff0ca4d),
+          bgColor1: kSecondaryColor,
           title: 'Forget Your Password Patients ',
         );
       },
@@ -133,7 +135,6 @@ class _Patient_LoginState extends State<Patient_Login> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // const SizedBox(height: 20),
               const Text(
                 'Access your health records securely',
                 style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
@@ -143,15 +144,14 @@ class _Patient_LoginState extends State<Patient_Login> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.black.withOpacity(0.09),
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: kPrimaryColor.withOpacity(0.8),
                         spreadRadius: 2,
                         blurRadius: 4,
-                        offset:
-                            const Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 4),
                       ),
                     ],
                   ),
@@ -162,9 +162,10 @@ class _Patient_LoginState extends State<Patient_Login> {
                       Text(
                         'Welcome to Royal Hospital Patient Portal',
                         style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black87),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black87,
+                        ),
                       ),
                       SizedBox(height: 10),
                       Padding(
@@ -180,15 +181,14 @@ class _Patient_LoginState extends State<Patient_Login> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.black.withOpacity(0.099),
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: kPrimaryColor.withOpacity(0.8),
                         spreadRadius: 2,
                         blurRadius: 4,
-                        offset:
-                            const Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 4),
                       ),
                     ],
                   ),
@@ -198,24 +198,28 @@ class _Patient_LoginState extends State<Patient_Login> {
                       children: [
                         const SizedBox(height: 10),
                         LoginTextField(
-                            controller: _emailOrPhoneController,
-                            labelText: 'Enter Email or Phone Number',
-                            hintText: '',
-                            bgColor1: kPrimaryColor),
+                          controller: _emailOrPhoneController,
+                          labelText: 'Enter Email or Phone Number',
+                          hintText: '',
+                          bgColor1: kPrimaryColor,
+                        ),
                         LoginTextField(
-                            controller: _passwordController,
-                            labelText: 'Enter Password',
-                            hintText: '',
-                            isPassword: true,
-                            bgColor1: kPrimaryColor),
+                          controller: _passwordController,
+                          labelText: 'Enter Password',
+                          hintText: '',
+                          isPassword: true,
+                          bgColor1: kPrimaryColor,
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(14.0),
                           child: CustomButton(
-                              width: double.infinity,
-                              height: 40,
-                              text: 'Log In',
-                              onPressed: _handleLoginButtonPress,
-                              backgroundColor: kPrimaryColor),
+                            width: double.infinity,
+                            height: 40,
+                            text: 'Log In',
+                            textColor: Colors.white,
+                            onPressed: _handleLoginButtonPress,
+                            backgroundColor: kSecondaryColor,
+                          ),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -225,7 +229,7 @@ class _Patient_LoginState extends State<Patient_Login> {
                               child: const Text(
                                 'Register',
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
@@ -266,10 +270,10 @@ class ServiceList extends StatelessWidget {
           children: [
             Icon(
               Icons.schedule,
-              color: kPrimaryColor,
+              color: kSecondaryColor,
             ),
             SizedBox(
-              width: 10,
+              width: 20,
             ),
             Text('Schedule appointments')
           ],
@@ -281,10 +285,10 @@ class ServiceList extends StatelessWidget {
           children: [
             Icon(
               Icons.receipt,
-              color: kPrimaryColor,
+              color: kSecondaryColor,
             ),
             SizedBox(
-              width: 10,
+              width: 20,
             ),
             Text('Receive prescriptions and alerts')
           ],
@@ -296,10 +300,10 @@ class ServiceList extends StatelessWidget {
           children: [
             Icon(
               Icons.history,
-              color: kPrimaryColor,
+              color: kSecondaryColor,
             ),
             SizedBox(
-              width: 10,
+              width: 20,
             ),
             Text('Transparent bill history')
           ],
@@ -311,10 +315,10 @@ class ServiceList extends StatelessWidget {
           children: [
             Icon(
               Icons.settings,
-              color: kPrimaryColor,
+              color: kSecondaryColor,
             ),
             SizedBox(
-              width: 10,
+              width: 20,
             ),
             Text('Manage your health and much more')
           ],
@@ -326,10 +330,10 @@ class ServiceList extends StatelessWidget {
           children: [
             Icon(
               Icons.family_restroom,
-              color: kPrimaryColor,
+              color: kSecondaryColor,
             ),
             SizedBox(
-              width: 10,
+              width: 20,
             ),
             Text('Track your family\'s health')
           ],
@@ -341,10 +345,10 @@ class ServiceList extends StatelessWidget {
           children: [
             Icon(
               Icons.notifications,
-              color: kPrimaryColor,
+              color: kSecondaryColor,
             ),
             SizedBox(
-              width: 10,
+              width: 20,
             ),
             Text('Get reminders and report')
           ],

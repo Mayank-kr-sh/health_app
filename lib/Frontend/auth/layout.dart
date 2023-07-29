@@ -52,6 +52,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
             content: const Text('Please enter your email/phone and password.'),
             actions: [
               CustomButton(
+                textColor: Colors.white,
                 text: 'OK',
                 onPressed: () {
                   Navigator.pop(context);
@@ -72,6 +73,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
             actions: [
               CustomButton(
                 text: 'OK',
+                textColor: Colors.white,
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -92,6 +94,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
             actions: [
               CustomButton(
                 text: 'OK',
+                textColor: Colors.white,
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -123,14 +126,14 @@ class _ScreenLayoutState extends State<ScreenLayout> {
           const SizedBox(height: 30),
           Container(
             decoration: BoxDecoration(
-              color: kPrimaryColor,
+              color: Colors.black.withOpacity(0.09),
               borderRadius: BorderRadius.circular(8),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
+                  color: kPrimaryColor.withOpacity(0.8),
                   spreadRadius: 2,
                   blurRadius: 4,
-                  offset: const Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 4),
                 ),
               ],
             ),
@@ -145,11 +148,10 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                         topRight: Radius.circular(10)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: kPrimaryColor.withOpacity(0.8),
                         spreadRadius: 2,
                         blurRadius: 4,
-                        offset:
-                            const Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 4),
                       ),
                     ],
                   ),
@@ -178,26 +180,13 @@ class _ScreenLayoutState extends State<ScreenLayout> {
                   isPassword: true,
                   bgColor1: widget.bgColor1,
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.all(14.0),
-                //   child: CustomButton(
-                //     width: double.infinity,
-                //     height: 40,
-                //     text: 'Log In',
-                //     onPressed: _handleLoginButtonPress,
-                //     backgroundColor: widget.bgColor1,
-                //   ),
-                // ),
-                // SizedBox(
-                //   height: 10,
-                // ),
                 Padding(
                   padding: const EdgeInsets.all(14.0),
                   child: CustomButton(
                     text: "Log In",
                     width: double.infinity,
-                    height: 55,
-                    onPressed: () {},
+                    height: 50,
+                    onPressed: _handleLoginButtonPress,
                     backgroundColor: kSecondaryColor,
                     textColor: Colors.white,
                   ),
@@ -258,7 +247,7 @@ class _ScreenLayoutState extends State<ScreenLayout> {
           const SizedBox(height: 10),
           CustomButton(
             width: double.infinity,
-            height: 55,
+            height: 50,
             text: widget.button2,
             onPressed: widget.onPressed2,
             backgroundColor: widget.bgColor3,

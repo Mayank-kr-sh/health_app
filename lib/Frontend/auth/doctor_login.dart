@@ -20,7 +20,7 @@ class Doctor_Login extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return const ForgotPasswordDialog(
-          bgColor1: Color(0xff20b2aa),
+          bgColor1: kSecondaryColor,
           title: 'FORGOT YOUR PASSWORD - DOCTORS',
         );
       },
