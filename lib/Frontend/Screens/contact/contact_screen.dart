@@ -14,8 +14,10 @@ class ContactScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: kSecondaryColor,
           elevation: 0,
-          title: SvgPicture.asset('assets/icons/contact_us.svg',
-              width: 33, color: Colors.white),
+          title: Center(
+            child: SvgPicture.asset('assets/icons/contact_us.svg',
+                width: 38, color: Colors.white),
+          ),
         ),
         body: Column(
           children: [

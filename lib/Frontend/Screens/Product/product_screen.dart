@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:health_app/Frontend/Screens/Case%20Sheet/ipd_case_sheet.dart';
 
 import '../../Constant/Constant.dart';
 import 'explore_screen.dart';
@@ -55,13 +56,13 @@ class _ProductScreenState extends State<ProductScreen> {
                 //   },
                 // ),
                 buildCarouselItem(
-                  "Private Clinic",
+                  "IPD Sheet",
                   'assets/images/clinic.png',
                   () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ExploreScreen(),
+                        builder: (context) => const IPDCaseSheet(),
                       ),
                     );
                   },

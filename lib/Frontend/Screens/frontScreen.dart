@@ -47,7 +47,7 @@ class MyScreen extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: 30, left: 60, right: 60),
                     child: Center(
                       child: Text(
-                        "Royal's Hospital",
+                        "Royal Hospital",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 26,

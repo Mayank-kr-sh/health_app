@@ -44,7 +44,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
@@ -59,26 +59,30 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home,
-                color: 0 == _currentIndex ? kPrimaryColor : kInactiveIconColor),
+                color:
+                    0 == _currentIndex ? kSecondaryColor : kInactiveIconColor),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.production_quantity_limits,
-                color: 1 == _currentIndex ? kPrimaryColor : kInactiveIconColor),
-            label: 'Product',
+            icon: Icon(Icons.medical_services,
+                color:
+                    1 == _currentIndex ? kSecondaryColor : kInactiveIconColor),
+            label: 'Services',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person,
-                color: 2 == _currentIndex ? kPrimaryColor : kInactiveIconColor),
-            label: 'About',
+                color:
+                    2 == _currentIndex ? kSecondaryColor : kInactiveIconColor),
+            label: 'Profile',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat,
-                color: 3 == _currentIndex ? kPrimaryColor : kInactiveIconColor),
+            icon: Icon(Icons.contact_mail,
+                color:
+                    3 == _currentIndex ? kSecondaryColor : kInactiveIconColor),
             label: 'Contact',
           ),
         ],
-        selectedItemColor: kPrimaryColor,
+        selectedItemColor: kSecondaryColor,
       ),
     );
   }

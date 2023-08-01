@@ -36,7 +36,7 @@ class DrawerSection extends StatelessWidget {
         16.0 * textScaleFactor; // Adjust the base font size as needed
 
     return Drawer(
-      backgroundColor: kPrimaryLightColor,
+      backgroundColor: kSecondaryColor,
       child: ListView(
         children: [
           // const Column(
@@ -47,43 +47,47 @@ class DrawerSection extends StatelessWidget {
               padding: EdgeInsets.only(top: 8, left: 10, bottom: 8),
               child: Text(
                 "Royal Hospital",
-                style: TextStyle(fontSize: 19, fontWeight: FontWeight.w900),
+                style: TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white),
               )),
           //   ],
           // ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
+            padding: const EdgeInsets.only(left: 40, right: 40, top: 10),
             child: CustomButton(
                 onPressed: () => _navigateToProvidersScreen(context),
                 text: 'Providers Login',
-                backgroundColor: kPrimaryColor,
-                textColor: Colors.white),
+                backgroundColor: Colors.white,
+                textColor: kSecondaryColor),
           ),
           const SizedBox(
             height: 10,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30),
+            padding: const EdgeInsets.only(left: 40, right: 40),
             child: CustomButton(
               onPressed: () => _navigateToPatientScreen(context),
               text: 'Patient Login',
-              backgroundColor: kSecondaryColor,
-              textColor: Colors.white,
+              backgroundColor: Colors.white,
+              textColor: kSecondaryColor,
+              // width: 100,
             ),
           ),
           const Divider(),
           ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.transparent,
-              child: SvgPicture.asset(
-                'assets/icons/drugs.svg',
-                width: iconSize,
-                color: const Color.fromARGB(255, 131, 130, 130),
-              ),
+              child: SvgPicture.asset('assets/icons/drugs.svg',
+                  width: iconSize, color: kPrimaryColor),
             ),
             title: Text(
               'Pills Identifier',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Navigator.push(
@@ -97,11 +101,18 @@ class DrawerSection extends StatelessWidget {
           ListTile(
             leading: Padding(
               padding: const EdgeInsets.only(left: 4.5),
-              child: Icon(Icons.mic_none_outlined, size: iconSize),
+              child: Icon(
+                Icons.mic_none_outlined,
+                size: iconSize,
+                color: kPrimaryColor,
+              ),
             ),
             title: Text(
               'Podcast',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Handle podcast tap
@@ -111,11 +122,18 @@ class DrawerSection extends StatelessWidget {
           ListTile(
             leading: Padding(
               padding: const EdgeInsets.only(left: 4.5),
-              child: Icon(Icons.notifications_none, size: iconSize),
+              child: Icon(
+                Icons.notifications_none,
+                size: iconSize,
+                color: kPrimaryColor,
+              ),
             ),
             title: Text(
               'Notifications',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Handle notifications tap NotificationSettingsPage
@@ -130,11 +148,18 @@ class DrawerSection extends StatelessWidget {
           ListTile(
             leading: Padding(
               padding: const EdgeInsets.only(left: 4.5),
-              child: Icon(Icons.mail_outline, size: iconSize),
+              child: Icon(
+                Icons.mail_outline,
+                size: iconSize,
+                color: kPrimaryColor,
+              ),
             ),
             title: Text(
               'Newsletter',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Handle newsletter tap NewsLetter
@@ -150,11 +175,18 @@ class DrawerSection extends StatelessWidget {
           ListTile(
             leading: Padding(
               padding: const EdgeInsets.only(left: 4.5),
-              child: Icon(Icons.feedback_outlined, size: iconSize),
+              child: Icon(
+                Icons.feedback_outlined,
+                size: iconSize,
+                color: kPrimaryColor,
+              ),
             ),
             title: Text(
               'Feedback',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Handle feedback tap
@@ -165,11 +197,18 @@ class DrawerSection extends StatelessWidget {
           ListTile(
             leading: Padding(
               padding: const EdgeInsets.only(left: 4.5),
-              child: Icon(Icons.privacy_tip_outlined, size: iconSize),
+              child: Icon(
+                Icons.privacy_tip_outlined,
+                size: iconSize,
+                color: kPrimaryColor,
+              ),
             ),
             title: Text(
               'Privacy & Legal',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Navigator.push(
@@ -183,11 +222,18 @@ class DrawerSection extends StatelessWidget {
           ListTile(
             leading: Padding(
               padding: const EdgeInsets.only(left: 4.5),
-              child: Icon(Icons.star_border, size: iconSize),
+              child: Icon(
+                Icons.star_border,
+                size: iconSize,
+                color: kPrimaryColor,
+              ),
             ),
             title: Text(
               'Rate and Review',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Handle rate and review tap
@@ -197,11 +243,18 @@ class DrawerSection extends StatelessWidget {
           ListTile(
             leading: Padding(
               padding: const EdgeInsets.only(left: 4.5),
-              child: Icon(Icons.share, size: iconSize),
+              child: Icon(
+                Icons.share,
+                size: iconSize,
+                color: kPrimaryColor,
+              ),
             ),
             title: Text(
               'Tell Friends',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Handle tell friends tap
@@ -211,11 +264,18 @@ class DrawerSection extends StatelessWidget {
           ListTile(
             leading: Padding(
               padding: const EdgeInsets.only(left: 4.5),
-              child: Icon(Icons.apps, size: iconSize),
+              child: Icon(
+                Icons.apps,
+                size: iconSize,
+                color: kPrimaryColor,
+              ),
             ),
             title: Text(
               'Other WebMD Apps',
-              style: TextStyle(fontSize: titleFontSize),
+              style: TextStyle(
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
             ),
             onTap: () {
               // Handle other WebMD apps tap
