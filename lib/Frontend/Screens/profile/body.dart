@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Screens/Case%20Sheet/ipd_case_sheet.dart';
+import 'package:health_app/Frontend/Screens/Tracked%20Symptoms/Tracked_symptoms.dart';
+import 'package:health_app/Frontend/Screens/med%20reminder/set_reminder.dart';
 import '../../Constant/Constant.dart';
 import 'profile_menu.dart';
 
@@ -31,23 +33,24 @@ class Body extends StatelessWidget {
                   );
                 }),
             ProfileMenu(
-                text: "Clinic Management Software",
-                icon: "assets/icons/clinic.svg",
+                text: "Medicine Reminder",
+                icon: "assets/icons/clock.svg",
                 press: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => const TrackedSymptoms()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SetReminders()),
+                  );
                 }),
             ProfileMenu(
-                text: "Pharmacy Management Software",
+                text: "Track Symptoms",
                 icon: "assets/icons/drugs.svg",
                 press: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => const Procedures()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TrackedSymptoms()),
+                  );
                 }),
             ProfileMenu(
                 text: "Lab Management Software",

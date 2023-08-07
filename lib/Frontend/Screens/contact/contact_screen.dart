@@ -270,6 +270,8 @@ class ContactScreen extends StatelessWidget {
                           onPressed: () {},
                           backgroundColor: kSecondaryColor,
                           textColor: Colors.white,
+                          height: 50,
+                          width: 200,
                         ),
                         const SizedBox(
                           height: 40,

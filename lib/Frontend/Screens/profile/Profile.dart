@@ -99,6 +99,7 @@ class ProfileScreen extends StatelessWidget {
                           );
                         },
                         backgroundColor: kPrimaryColor,
+                        textColor: kSecondaryColor,
                         // width: 120,
                       ),
                     ],

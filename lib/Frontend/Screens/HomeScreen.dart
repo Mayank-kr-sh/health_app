@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                       "Halemind is an ingenious, leading edge and connected EMR and HMS that empowers independent practices and hospitals. Halemind's secure, advanced and speciality driven EHR that enables you to run your practice in a simpler and efficient way, so you can focus on what matters the most - Your Patients.",
                   buttonText: 'Get Started for Free',
                   thumbnailAsset: 'assets/images/thumbnail.png',
-                  videoUrl: 'https://www.youtube.com/watch?v=tnxGPvZcOWk',
+                  videoUrl: '',
                 ),
               ),
             ),
