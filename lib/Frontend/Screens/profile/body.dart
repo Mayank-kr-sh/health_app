@@ -26,8 +26,7 @@ class Body extends StatelessWidget {
                 press: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const IPDCaseSheet()),
+                    MaterialPageRoute(builder: (context) => IPDCaseSheet()),
                   );
                 }),
             ProfileMenu(

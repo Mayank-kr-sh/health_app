@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:health_app/Frontend/Widgets/bottom_nav.dart';
 
 import 'Frontend/Constant/Constant.dart';
+// import 'Frontend/Screens/admin/patient_list_screen.dart';
 import 'Frontend/Screens/frontScreen.dart';
 
 void main() {
@@ -31,6 +32,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(primaryColor: kPrimaryColor),
       //home: const CustomBottomNavBar(),
       home: const MyScreen(),
+      // home: PatientListScreen(),
     );
   }
 }

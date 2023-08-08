@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Constant/Constant.dart';
 import 'package:health_app/Frontend/Widgets/custom_button.dart';
+import 'package:health_app/Frontend/admin/patient_list_screen.dart';
 import '../Widgets/video_popup.dart';
 
 class DynamicBanner extends StatelessWidget {
@@ -57,12 +58,20 @@ class DynamicBanner extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: CustomButton(
-                          text: buttonText,
-                          onPressed: () {},
-                          backgroundColor: kSecondaryColor,
-                          textColor: Colors.white)),
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: CustomButton(
+                        text: buttonText,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PatientListScreen(),
+                            ),
+                          );
+                        },
+                        backgroundColor: kSecondaryColor,
+                        textColor: Colors.white),
+                  ),
                   if (videoUrl != null)
                     GestureDetector(
                       onTap: () {
