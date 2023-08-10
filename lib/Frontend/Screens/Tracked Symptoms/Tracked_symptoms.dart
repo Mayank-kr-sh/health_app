@@ -35,53 +35,57 @@ class _TrackedSymptomsState extends State<TrackedSymptoms> {
             },
           ),
         ),
-        body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                "assets/icons/symptoms.svg",
-                color: kSecondaryColor,
-                width: 50,
-              ),
+        body: SingleChildScrollView(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  "assets/icons/symptoms.svg",
+                  color: kSecondaryColor,
+                  width: 50,
+                ),
 
-              const SizedBox(
-                height: 30,
-              ),
-              const Text("Track Symptoms",
-                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 22)),
-              const SizedBox(
-                height: 5,
-              ),
-              const Text("Start tracking your symptoms and conditions",
-                  style: TextStyle(fontSize: 14)),
-              const Text("Click the add button below and then search for a ",
-                  style: TextStyle(fontSize: 14)),
-              const Text("symptoms or condition by name",
-                  style: TextStyle(fontSize: 14)),
-              SizedBox(
-                height: screenHeight / 2 - 200,
-              ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Text("Track Symptoms",
+                    style:
+                        TextStyle(fontWeight: FontWeight.w800, fontSize: 22)),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text("Start tracking your symptoms and conditions",
+                    style: TextStyle(fontSize: 14)),
+                const Text("Click the add button below and then search for a ",
+                    style: TextStyle(fontSize: 14)),
+                const Text("symptoms or condition by name",
+                    style: TextStyle(fontSize: 14)),
+                SizedBox(
+                  height: screenHeight / 2 - 200,
+                ),
 
-              Center(
-                child: Dotbutton(
-                    text: "Add Symptoms or condition",
-                    onPressed: () => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SearchSymptoms()))
-                        }),
-              ),
-              // Center(
-              //   child: TransparentButton(
-              //     text: 'Tracked Symptoms',
-              //     onPressed: () {
-              //       // Action to perform when the button is pressed
-              //       print('Button pressed!');
-              //     },
-              //   ),
-              // ),
-            ]));
+                Center(
+                  child: Dotbutton(
+                      text: "Add Symptoms or condition",
+                      onPressed: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SearchSymptoms()))
+                          }),
+                ),
+                // Center(
+                //   child: TransparentButton(
+                //     text: 'Tracked Symptoms',
+                //     onPressed: () {
+                //       // Action to perform when the button is pressed
+                //       print('Button pressed!');
+                //     },
+                //   ),
+                // ),
+              ]),
+        ));
   }
 }

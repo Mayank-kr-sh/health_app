@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:health_app/Frontend/Screens/Case%20Sheet/ipd_case_sheet.dart';
 import 'package:health_app/Frontend/Screens/Tracked%20Symptoms/Tracked_symptoms.dart';
 import 'package:health_app/Frontend/Screens/med%20reminder/set_reminder.dart';
+import '../../../Backend/display_data.dart';
 import '../../Constant/Constant.dart';
 import 'profile_menu.dart';
 
@@ -56,10 +57,10 @@ class Body extends StatelessWidget {
                 text: "Lab Management Software",
                 icon: "assets/icons/lab.svg",
                 press: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => const Procedures()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DisplayData()),
+                  );
                 }),
             Container(
                 alignment: Alignment.topLeft,

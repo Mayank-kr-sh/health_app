@@ -43,6 +43,7 @@ dependencies:
   share_plus: ^7.0.2
   date_time_picker: ^2.1.0
   dotted_border: ^2.0.0+3
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
